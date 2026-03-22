@@ -81,8 +81,9 @@
     }
 
     /* ===== CLASS SCHEDULE EDITOR ===== */
-    .cs-toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:.75rem; }
-    .cs-tabs { display:flex; flex-wrap:wrap; gap:.375rem; flex:1; }
+    .cs-toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.75rem; }
+    .cs-left { display:flex; flex-wrap:wrap; align-items:center; gap:.375rem; }
+    .cs-tabs { display:flex; flex-wrap:wrap; gap:.375rem; }
     .cs-tab {
       padding:.35rem 1rem;
       border-radius:var(--radius-full);
@@ -369,10 +370,12 @@
     </div>
 
     <div class="cs-toolbar fade-in" style="margin-bottom:1.25rem;">
-      <div class="cs-tabs" id="csTabs"></div>
-      <div class="cs-actions">
+      <div class="cs-left">
+        <div class="cs-tabs" id="csTabs"></div>
         <button class="btn btn--outline btn--sm" id="csAddClass">＋ Класс</button>
-        <button class="btn btn--outline btn--sm btn--danger" id="csDelClass">✕ Удалить</button>
+        <button class="btn btn--outline btn--sm btn--danger" id="csDelClass" title="Удалить класс">✕</button>
+      </div>
+      <div class="cs-actions">
         <button class="btn btn--outline btn--sm" id="csAddLesson">＋ Урок</button>
         <button class="btn btn--outline btn--sm" id="csAddBreak">＋ Перемена</button>
         <button class="btn btn--primary btn--sm" id="csSave">Сохранить</button>
