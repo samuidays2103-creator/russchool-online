@@ -3,18 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Цены и тарифы — Академия на русском</title>
-  <meta name="description" content="Прозрачные цены на онлайн-обучение русскому языку и математике. От €80/мес. Пробный урок бесплатно. Оплата картой, PayPal, крипто.">
+  <title>Цены и тарифы — Академия на русском | От €80/мес, пробный урок бесплатно</title>
+  <meta name="description" content="Прозрачные цены на онлайн-обучение. От €80/мес. Тарифы Старт, Основной, Интенсив. Скидки при оплате за квартал и год. Пробный урок бесплатно.">
   <link rel="canonical" href="https://russchool.online/prices.html">
-  <meta property="og:title" content="Цены и тарифы — Академия на русском">
-  <meta property="og:description" content="Прозрачные цены на онлайн-обучение русскому языку и математике. От €80/мес. Пробный урок бесплатно.">
+  <meta property="og:title" content="Цены — Академия на русском">
   <meta property="og:url" content="https://russchool.online/prices.html">
-  <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .compare-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+    .compare-table th { padding: 1rem; text-align: center; font-weight: 700; border-bottom: 2px solid var(--color-border); }
+    .compare-table th:first-child { text-align: left; }
+    .compare-table td { padding: .75rem 1rem; text-align: center; border-bottom: 1px solid var(--color-border); }
+    .compare-table td:first-child { text-align: left; font-weight: 500; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .highlight-col { background: rgba(30,58,95,0.04); }
+    .compare-table th.highlight-col { background: rgba(30,58,95,0.08); border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+    .check { color: var(--color-success); font-weight: 800; }
+    .cross { color: var(--color-text-muted); }
+    .payment-methods { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .payment-badge { display: inline-flex; align-items: center; gap: .375rem; padding: .5rem 1rem; border-radius: var(--radius-md); background: var(--color-bg-card); border: 1px solid var(--color-border); font-size: .875rem; font-weight: 500; }
+  </style>
 </head>
 <body>
 
@@ -22,239 +34,241 @@
 
 <header class="header" role="banner">
   <div class="header__inner">
-    <a href="index.html" class="header__logo" aria-label="Академия на русском — главная">
-      <div class="logo__icon">АР</div>
-      <div class="logo__text">Академия на русском
-        <span>Онлайн-школа для детей</span>
-      </div>
-    </a>
-    <nav class="nav" aria-label="Основная навигация">
-      <ul class="nav__list">
-        <li><a href="index.html" class="nav__link">Главная</a></li>
-        <li><a href="courses.html" class="nav__link">Программы</a></li>
-        <li><a href="teachers.html" class="nav__link">Учителя</a></li>
-        <li><a href="schedule.html" class="nav__link">Расписание</a></li>
-        <li><a href="prices.html" class="nav__link nav__link--active">Цены</a></li>
-        <li><a href="about.html" class="nav__link">О нас</a></li>
-      </ul>
-    </nav>
+    <a href="index.html" class="header__logo"><div class="logo__icon" aria-hidden="true">АР</div><div class="logo__text">Академия на русском<span>Онлайн-школа для детей</span></div></a>
+    <nav class="nav"><ul class="nav__list">
+      <li><a href="index.html" class="nav__link">Главная</a></li>
+      <li><a href="courses.html" class="nav__link">Программы</a></li>
+      <li><a href="teachers.html" class="nav__link">Учителя</a></li>
+      <li><a href="schedule.html" class="nav__link">Расписание</a></li>
+      <li><a href="prices.html" class="nav__link nav__link--active">Цены</a></li>
+      <li><a href="about.html" class="nav__link">О школе</a></li>
+    </ul></nav>
     <div class="header__actions">
       <a href="contacts.html" class="btn btn--primary btn--sm">Записаться</a>
-      <button class="hamburger" aria-label="Открыть меню" aria-expanded="false" aria-controls="navDrawer">
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-      </button>
+      <button class="hamburger" aria-label="Открыть меню" aria-expanded="false"><span class="hamburger__line"></span><span class="hamburger__line"></span><span class="hamburger__line"></span></button>
     </div>
   </div>
 </header>
 
-<nav class="nav-drawer" id="navDrawer" aria-label="Мобильная навигация">
-  <ul class="nav-drawer__list">
-    <li><a href="index.html" class="nav-drawer__link">Главная</a></li>
-    <li><a href="courses.html" class="nav-drawer__link">Программы</a></li>
-    <li><a href="teachers.html" class="nav-drawer__link">Учителя</a></li>
-    <li><a href="schedule.html" class="nav-drawer__link">Расписание</a></li>
-    <li><a href="prices.html" class="nav-drawer__link nav-drawer__link--active">Цены</a></li>
-    <li><a href="about.html" class="nav-drawer__link">О нас</a></li>
-    <li><a href="contacts.html" class="nav-drawer__link">Контакты</a></li>
-  </ul>
-  <div class="nav-drawer__cta">
-    <a href="contacts.html" class="btn btn--primary w-full">Записаться</a>
-  </div>
-</nav>
+<nav class="nav-drawer"><ul class="nav-drawer__list">
+  <li><a href="index.html" class="nav-drawer__link">Главная</a></li>
+  <li><a href="courses.html" class="nav-drawer__link">Программы</a></li>
+  <li><a href="teachers.html" class="nav-drawer__link">Учителя</a></li>
+  <li><a href="schedule.html" class="nav-drawer__link">Расписание</a></li>
+  <li><a href="prices.html" class="nav-drawer__link nav-drawer__link--active">Цены</a></li>
+  <li><a href="about.html" class="nav-drawer__link">О школе</a></li>
+  <li><a href="contacts.html" class="nav-drawer__link">Контакты</a></li>
+</ul><div class="nav-drawer__cta"><a href="contacts.html" class="btn btn--accent btn--wide">Записаться на пробный урок</a></div></nav>
 
 <main id="main">
 
-<!-- ========== HERO ========== -->
 <section class="hero hero--short" aria-label="Цены">
-  <div class="hero__particles" aria-hidden="true"></div>
+  <div class="hero__bg-glow" aria-hidden="true"></div>
   <div class="hero__content">
-    <div class="hero__badge">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      Пробный урок — бесплатно
+    <div class="hero__main-col">
+      <div class="hero__badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Пробный урок — бесплатно
+      </div>
+      <h1 class="hero__title">Прозрачные цены</h1>
+      <p class="hero__text">Никаких скрытых платежей. Оплата ежемесячно, отмена в любой момент. Скидка до 20% при оплате за год.</p>
     </div>
-    <h1 class="hero__title">Прозрачные цены</h1>
-    <p class="hero__text">Никаких скрытых платежей. Оплата ежемесячно, отмена в любой момент.</p>
   </div>
 </section>
 
-<!-- ========== ТАРИФЫ ========== -->
-<section class="section" id="plans">
+<div class="breadcrumb"><div class="container"><a href="index.html">Главная</a><span class="breadcrumb__sep">›</span><span>Цены</span></div></div>
+
+<!-- ========== ПЕРЕКЛЮЧАТЕЛЬ + ТАРИФЫ ========== -->
+<section class="section section--white" id="pricing">
   <div class="container">
-    <div class="section__header fade-in">
+    <div class="section__header fade-in-up">
       <div class="section__label">Тарифы</div>
-      <h2 class="section__title">Выберите программу</h2>
-      <p class="section__subtitle">Три тарифа под разные цели и бюджеты. Первый платёж — только после второго урока.</p>
+      <h2 class="section__title">Выберите подходящий план</h2>
+      <p class="section__subtitle">Чем дольше — тем выгоднее. При оплате за год экономите до 20%.</p>
     </div>
-    <div class="pricing-grid fade-in">
 
-      <div class="pricing-card">
-        <h3 class="pricing-card__title">Один предмет</h3>
-        <p class="pricing-card__subtitle">Русский язык или математика</p>
+    <!-- Переключатель период -->
+    <div class="pricing-toggle fade-in-up" role="group" aria-label="Период оплаты">
+      <button class="pricing-toggle__btn active" id="toggleMonthly" onclick="setPricePeriod('monthly', this)" aria-pressed="true">Ежемесячно</button>
+      <button class="pricing-toggle__btn" id="toggleQuarterly" onclick="setPricePeriod('quarterly', this)" aria-pressed="false">
+        Квартал
+        <span class="pricing-toggle__badge">−10%</span>
+      </button>
+      <button class="pricing-toggle__btn" id="toggleYearly" onclick="setPricePeriod('yearly', this)" aria-pressed="false">
+        Год
+        <span class="pricing-toggle__badge">−20%</span>
+      </button>
+    </div>
+
+    <!-- Карточки тарифов -->
+    <div class="pricing-grid fade-in-up">
+
+      <!-- СТАРТ -->
+      <article class="pricing-card">
+        <div class="pricing-card__title">Старт</div>
+        <div class="pricing-card__subtitle">Один предмет, 2 урока в неделю</div>
         <div class="pricing-card__price">
-          <div class="pricing-card__amount"><sup>€</sup>80</div>
-          <div class="pricing-card__period">в месяц · 2 урока в неделю · 45 мин</div>
+          <div class="pricing-card__amount">
+            <sup>€</sup><span class="price-value" data-monthly="80" data-quarterly="72" data-yearly="64">80</span>
+          </div>
+          <div class="pricing-card__period">в месяц · <span class="period-label">оплата ежемесячно</span></div>
+          <div class="pricing-card__original" id="originalStart" style="display:none"></div>
         </div>
-        <ul class="pricing-card__features">
-          <li class="pricing-feature pricing-feature--yes">Живые уроки с учителем</li>
+        <ul class="pricing-card__features" aria-label="Что входит в тариф Старт">
+          <li class="pricing-feature pricing-feature--yes">1 предмет (русский язык или математика)</li>
+          <li class="pricing-feature pricing-feature--yes">2 урока в неделю (8 уроков в месяц)</li>
           <li class="pricing-feature pricing-feature--yes">Группа 3–5 детей</li>
           <li class="pricing-feature pricing-feature--yes">Домашние задания с проверкой</li>
           <li class="pricing-feature pricing-feature--yes">Еженедельный отчёт родителям</li>
-          <li class="pricing-feature pricing-feature--no">Куратор семьи</li>
-          <li class="pricing-feature pricing-feature--no">Олимпиадная подготовка</li>
+          <li class="pricing-feature pricing-feature--no">Бесплатный перенос занятий</li>
+          <li class="pricing-feature pricing-feature--no">Приоритет при выборе времени</li>
         </ul>
-        <a href="contacts.html" class="btn btn--outline w-full">Записаться</a>
-      </div>
+        <a href="contacts.html" class="btn btn--outline btn--wide">Выбрать Старт</a>
+      </article>
 
-      <div class="pricing-card pricing-card--featured">
-        <div class="pricing-card__badge">Популярный выбор</div>
-        <h3 class="pricing-card__title">Комплексный</h3>
-        <p class="pricing-card__subtitle">Русский язык + математика</p>
+      <!-- ОСНОВНОЙ -->
+      <article class="pricing-card pricing-card--featured">
+        <div class="pricing-card__badge">Рекомендуем</div>
+        <div class="pricing-card__title">Основной</div>
+        <div class="pricing-card__subtitle">Два предмета, 4 урока в неделю</div>
         <div class="pricing-card__price">
-          <div class="pricing-card__amount"><sup>€</sup>120</div>
-          <div class="pricing-card__period">в месяц · 4 урока в неделю · 45 мин</div>
+          <div class="pricing-card__amount">
+            <sup>€</sup><span class="price-value" data-monthly="120" data-quarterly="108" data-yearly="96">120</span>
+          </div>
+          <div class="pricing-card__period">в месяц · <span class="period-label">оплата ежемесячно</span></div>
+          <div class="pricing-card__original" id="originalMain" style="display:none"></div>
         </div>
-        <ul class="pricing-card__features">
-          <li class="pricing-feature pricing-feature--yes">Живые уроки с учителем</li>
-          <li class="pricing-feature pricing-feature--yes">Группа 3–5 детей</li>
+        <ul class="pricing-card__features" aria-label="Что входит в тариф Основной">
+          <li class="pricing-feature pricing-feature--yes">2 предмета (русский + математика)</li>
+          <li class="pricing-feature pricing-feature--yes">4 урока в неделю (16 в месяц)</li>
+          <li class="pricing-feature pricing-feature--yes">Группы 3–5 детей</li>
           <li class="pricing-feature pricing-feature--yes">Домашние задания с проверкой</li>
-          <li class="pricing-feature pricing-feature--yes">Еженедельный отчёт родителям</li>
-          <li class="pricing-feature pricing-feature--yes">Куратор семьи</li>
-          <li class="pricing-feature pricing-feature--no">Олимпиадная подготовка</li>
+          <li class="pricing-feature pricing-feature--yes">Еженедельный отчёт по двум предметам</li>
+          <li class="pricing-feature pricing-feature--yes">1 бесплатный перенос в месяц</li>
+          <li class="pricing-feature pricing-feature--no">Приоритет при выборе времени</li>
         </ul>
-        <p style="font-size:.8rem;color:var(--color-green);font-weight:700;margin-bottom:1rem;">Скидка 15% по сравнению с раздельными тарифами</p>
-        <a href="contacts.html" class="btn btn--primary w-full">Записаться → скидка 15%</a>
-      </div>
+        <a href="contacts.html" class="btn btn--primary btn--wide">Выбрать Основной</a>
+      </article>
 
-      <div class="pricing-card">
-        <h3 class="pricing-card__title">Интенсив</h3>
-        <p class="pricing-card__subtitle">Для быстрого старта или подготовки</p>
+      <!-- ИНТЕНСИВ -->
+      <article class="pricing-card">
+        <div class="pricing-card__title">Интенсив</div>
+        <div class="pricing-card__subtitle">Два предмета, 5–6 уроков в неделю</div>
         <div class="pricing-card__price">
-          <div class="pricing-card__amount"><sup>€</sup>200</div>
-          <div class="pricing-card__period">в месяц · 5 уроков в неделю · 45 мин</div>
+          <div class="pricing-card__amount">
+            <sup>€</sup><span class="price-value" data-monthly="160" data-quarterly="144" data-yearly="128">160</span>
+          </div>
+          <div class="pricing-card__period">в месяц · <span class="period-label">оплата ежемесячно</span></div>
+          <div class="pricing-card__original" id="originalIntensive" style="display:none"></div>
         </div>
-        <ul class="pricing-card__features">
-          <li class="pricing-feature pricing-feature--yes">Живые уроки с учителем</li>
-          <li class="pricing-feature pricing-feature--yes">Мини-группа до 3 детей</li>
+        <ul class="pricing-card__features" aria-label="Что входит в тариф Интенсив">
+          <li class="pricing-feature pricing-feature--yes">2 предмета (русский + математика)</li>
+          <li class="pricing-feature pricing-feature--yes">5–6 уроков в неделю (20–24 в мес.)</li>
+          <li class="pricing-feature pricing-feature--yes">Группы 3–5 детей</li>
           <li class="pricing-feature pricing-feature--yes">Домашние задания с проверкой</li>
-          <li class="pricing-feature pricing-feature--yes">Еженедельный отчёт родителям</li>
-          <li class="pricing-feature pricing-feature--yes">Куратор семьи</li>
-          <li class="pricing-feature pricing-feature--yes">Олимпиадная подготовка</li>
+          <li class="pricing-feature pricing-feature--yes">Еженедельный + ежемесячный отчёт</li>
+          <li class="pricing-feature pricing-feature--yes">Неограниченные переносы</li>
+          <li class="pricing-feature pricing-feature--yes">Приоритет при выборе времени</li>
         </ul>
-        <a href="contacts.html" class="btn btn--outline w-full">Записаться</a>
-      </div>
+        <a href="contacts.html" class="btn btn--outline btn--wide">Выбрать Интенсив</a>
+      </article>
 
+    </div>
+
+    <!-- Пробный урок баннер -->
+    <div class="trial-banner mt-4 fade-in-up">
+      <div>
+        <h3>Не уверены? Начните бесплатно</h3>
+        <p>Первый пробный урок — полностью бесплатно, без обязательств. Учитель оценит уровень ребёнка и порекомендует тариф.</p>
+      </div>
+      <a href="contacts.html" class="btn btn--primary" style="white-space:nowrap;flex-shrink:0">Записаться на пробный урок →</a>
     </div>
   </div>
 </section>
 
-<!-- ========== ПРОБНЫЙ УРОК ========== -->
-<section class="section section--alt" id="trial">
+<!-- ========== СРАВНИТЕЛЬНАЯ ТАБЛИЦА ========== -->
+<section class="section section--warm">
   <div class="container">
-    <div class="notice fade-in" style="max-width:720px;margin:0 auto;font-size:1rem;padding:1.5rem 2rem;">
-      <strong style="font-size:1.1rem;display:block;margin-bottom:.5rem;">Первый урок — всегда бесплатно</strong>
-      Первый урок не стоит ничего и ни к чему не обязывает. Мы хотим, чтобы ребёнок познакомился с учителем
-      и форматом до того, как вы примете решение. Никакого давления, никаких менеджеров с уговорами.
-      Понравилось — продолжаем. Не подошло — без обид.
+    <div class="section__header fade-in-up">
+      <div class="section__label">Сравнение</div>
+      <h2 class="section__title">Что входит в каждый тариф</h2>
+    </div>
+    <div class="schedule-wrapper fade-in-up">
+      <table class="compare-table" aria-label="Сравнение тарифов">
+        <thead>
+          <tr>
+            <th>Параметр</th>
+            <th>Старт</th>
+            <th class="highlight-col">Основной ⭐</th>
+            <th>Интенсив</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Предметы</td><td>1</td><td class="highlight-col">2</td><td>2</td></tr>
+          <tr><td>Уроков в неделю</td><td>2</td><td class="highlight-col">4</td><td>5–6</td></tr>
+          <tr><td>Размер группы</td><td>3–5 детей</td><td class="highlight-col">3–5 детей</td><td>3–5 детей</td></tr>
+          <tr><td>Домашние задания</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Еженедельный отчёт</td><td><span class="check">✓</span></td><td class="highlight-col"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Ежемесячный отчёт</td><td><span class="cross">–</span></td><td class="highlight-col"><span class="cross">–</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Перенос урока</td><td><span class="cross">–</span></td><td class="highlight-col">1 в месяц</td><td>Без ограничений</td></tr>
+          <tr><td>Приоритет в расписании</td><td><span class="cross">–</span></td><td class="highlight-col"><span class="cross">–</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Скидка квартал / год</td><td>−10% / −20%</td><td class="highlight-col">−10% / −20%</td><td>−10% / −20%</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
-<!-- ========== КАК ОПЛАТИТЬ ========== -->
-<section class="section" id="payment">
+<!-- ========== СПОСОБЫ ОПЛАТЫ ========== -->
+<section class="section section--white">
   <div class="container">
-    <div class="section__header fade-in">
+    <div class="section__header fade-in-up">
       <div class="section__label">Оплата</div>
       <h2 class="section__title">Как оплатить</h2>
-      <p class="section__subtitle">Работаем с семьями по всему миру — принимаем удобные способы оплаты.</p>
+      <p class="section__subtitle">Принимаем оплату различными способами, удобными для семей по всему миру</p>
     </div>
-    <div class="benefits-grid fade-in">
-      <div class="benefit-card">
-        <div class="benefit-card__icon">💳</div>
-        <h3 class="benefit-card__title">Банковская карта</h3>
-        <p class="benefit-card__text">Visa, Mastercard любой страны выпуска. Оплата через Stripe — надёжный международный провайдер. Счёт в евро.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-card__icon">🅿</div>
-        <h3 class="benefit-card__title">PayPal</h3>
-        <p class="benefit-card__text">Для семей в Европе и США. Счёт в евро. Быстро и привычно для большинства европейских семей.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-card__icon">₿</div>
-        <h3 class="benefit-card__title">USDT / Криптовалюта</h3>
-        <p class="benefit-card__text">TRC-20 и ERC-20. Курс по CoinMarketCap на дату оплаты. Удобно для семей в ЮВА, ОАЭ и других регионах без простого доступа к евро-картам.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-card__icon">🏦</div>
-        <h3 class="benefit-card__title">Банковский перевод</h3>
-        <p class="benefit-card__text">Для семей с тарифом €200+/мес. SEPA (Европа) и SWIFT (весь мир). Выставляем инвойс на email.</p>
-      </div>
+    <div class="payment-methods fade-in-up" style="justify-content:center">
+      <div class="payment-badge">💳 Карта Visa/Mastercard</div>
+      <div class="payment-badge">📱 PayPal</div>
+      <div class="payment-badge">₿ USDT/крипто</div>
+      <div class="payment-badge">🏦 Перевод SWIFT</div>
+      <div class="payment-badge">🇷🇺 СБП (РФ)</div>
+      <div class="payment-badge">💵 Наличные (ЮВА)</div>
+    </div>
+    <div class="notice mt-4 fade-in-up" style="max-width:640px;margin-left:auto;margin-right:auto;text-align:center">
+      Если ваш способ оплаты не указан — напишите нам, найдём решение. Мы работаем с семьями по всему миру и привыкли к нестандартным ситуациям.
     </div>
   </div>
 </section>
 
 <!-- ========== FAQ ========== -->
-<section class="section section--alt" id="faq">
+<section class="section section--warm" id="faq">
   <div class="container">
-    <div class="section__header fade-in">
-      <div class="section__label">Вопросы</div>
-      <h2 class="section__title">Частые вопросы об оплате</h2>
+    <div class="section__header fade-in-up">
+      <div class="section__label">Вопросы об оплате</div>
+      <h2 class="section__title">Часто спрашивают</h2>
     </div>
-    <div class="faq-list fade-in">
-
+    <div class="faq-list fade-in-up">
       <div class="faq-item">
-        <button class="faq-question">
-          Когда списывается оплата?
-          <span class="faq-question__icon">+</span>
-        </button>
-        <div class="faq-answer">1-го числа каждого месяца, за следующий месяц вперёд. Вы получаете напоминание за 3 дня до списания. Первый платёж — только после второго урока, чтобы вы убедились в качестве.</div>
+        <button class="faq-question" aria-expanded="false">Что если ребёнок пропустил урок? <span class="faq-question__icon">+</span></button>
+        <div class="faq-answer">Пропущенный урок можно перенести (в зависимости от тарифа) или получить запись урока. Если причина уважительная (болезнь, форс-мажор) — всегда войдём в положение и что-то придумаем.</div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question">
-          Можно ли платить в долларах?
-          <span class="faq-question__icon">+</span>
-        </button>
-        <div class="faq-answer">Да, принимаем USD по курсу EUR/USD на дату платежа. Укажите при записи, и мы выставим счёт в долларах.</div>
+        <button class="faq-question" aria-expanded="false">Могу ли я отменить подписку в любое время? <span class="faq-question__icon">+</span></button>
+        <div class="faq-answer">Да, отмена в любой момент без штрафов. При ежемесячной оплате — просто не продлевайте. При квартальной или годовой — остаток можно сохранить на будущее или вернуть пропорционально (уточняйте в конкретной ситуации).</div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question">
-          Что если отменить подписку в середине месяца?
-          <span class="faq-question__icon">+</span>
-        </button>
-        <div class="faq-answer">Возвращаем пропорциональную сумму за неиспользованные уроки. Считаем честно: заплатили за 8 уроков, прошли 3 — возвращаем деньги за 5. Возврат в течение 5 рабочих дней.</div>
+        <button class="faq-question" aria-expanded="false">Цены в евро — как это работает для семей в России? <span class="faq-question__icon">+</span></button>
+        <div class="faq-answer">Для семей в России принимаем оплату в рублях по курсу ЦБ на дату оплаты. Также работают платежи через СБП. Пишите — подберём удобный способ.</div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question">
-          Есть ли скидка для нескольких детей из семьи?
-          <span class="faq-question__icon">+</span>
-        </button>
-        <div class="faq-answer">Да. Второй ребёнок из семьи — скидка 10%. Третий и каждый следующий — скидка 15%. Скидки суммируются с тарифом «Комплексный».</div>
+        <button class="faq-question" aria-expanded="false">Есть ли скидки для семей с несколькими детьми? <span class="faq-question__icon">+</span></button>
+        <div class="faq-answer">Да! При записи двух и более детей — скидка 10% на каждого дополнительного ребёнка. Обсудите при записи с куратором.</div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question">
-          Нужен ли договор?
-          <span class="faq-question__icon">+</span>
-        </button>
-        <div class="faq-answer">Да, перед первым платежом высылаем договор-оферту на email. Он фиксирует расписание, тариф, условия отмены и возврата. Подпись электронная.</div>
+        <button class="faq-question" aria-expanded="false">Когда нужно платить первый раз? <span class="faq-question__icon">+</span></button>
+        <div class="faq-answer">Пробный урок — бесплатно, платить не нужно. Первый платёж — только когда вы решите продолжить, перед первым регулярным уроком. Мы не берём деньги вперёд до вашего решения.</div>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ========== СКИДКА ДЛЯ СЛОЖНЫХ СИТУАЦИЙ ========== -->
-<section class="section" id="support">
-  <div class="container">
-    <div class="notice fade-in" style="max-width:720px;margin:0 auto;border-left-color:var(--color-accent);font-size:.95rem;padding:1.5rem 2rem;">
-      <strong style="display:block;margin-bottom:.5rem;">Поддержка семей в сложных ситуациях</strong>
-      Для семей в сложной жизненной ситуации — переезд, адаптация, финансовые трудности — у нас есть
-      ограниченное количество мест со скидкой 30%. Это не афишируется, но мы убеждены, что образование
-      не должно быть роскошью. Напишите нам в Telegram — рассмотрим индивидуально.
     </div>
   </div>
 </section>
@@ -262,58 +276,60 @@
 <!-- ========== CTA ========== -->
 <section class="cta-section">
   <div class="container">
-    <h2>Начните с бесплатного урока</h2>
-    <p>Познакомьтесь с учителем и форматом. Первый урок бесплатно — никаких обязательств.</p>
-    <div class="btn-group">
-      <a href="contacts.html" class="btn btn--accent btn--lg">Записаться на пробный урок</a>
-      <a href="teachers.html" class="btn btn--outline-white btn--lg">Познакомиться с учителями</a>
+    <h2 class="fade-in-up">Начните с бесплатного урока</h2>
+    <p class="fade-in-up">Попробуйте — и только потом решайте. Первый урок бесплатен.</p>
+    <div class="btn-group fade-in-up" style="justify-content:center">
+      <a href="contacts.html" class="btn btn--accent btn--lg">Записаться бесплатно</a>
+      <a href="teachers.html" class="btn btn--outline-white">Познакомиться с учителями</a>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <div style="display:flex;align-items:center;gap:.625rem;margin-bottom:1rem;">
-          <div class="logo__icon">АР</div>
-          <span style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;">Академия на русском</span>
-        </div>
-        <p class="footer__tagline">Школа на русском языке для детей русскоязычной диаспоры. Русский язык и математика, возраст 7–12 лет.</p>
-      </div>
-      <div>
-        <div class="footer__col-title">Школа</div>
-        <ul class="footer__links">
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="teachers.html">Учителя</a></li>
-          <li><a href="courses.html">Программы</a></li>
-          <li><a href="schedule.html">Расписание</a></li>
-          <li><a href="prices.html">Цены</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer__col-title">Программы</div>
-        <ul class="footer__links">
-          <li><a href="courses.html#russian">Русский язык</a></li>
-          <li><a href="courses.html#math">Математика</a></li>
-          <li><a href="courses.html#combo">Комплексная</a></li>
-          <li><a href="courses.html#attestat">Аттестат РФ</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer__col-title">Контакты</div>
-        <div class="footer__contacts">
-          <div class="footer__contact"><span>✈</span><a href="https://t.me/russchoolonline">@russchoolonline</a></div>
-          <div class="footer__contact"><span>@</span><a href="mailto:hello@russchool.online">hello@russchool.online</a></div>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom"><span>© 2024–2026 Академия на русском</span></div>
+<footer class="footer"><div class="container">
+  <div class="footer__grid">
+    <div class="footer__brand"><a href="index.html" class="footer__logo-link"><div class="footer__logo-icon" aria-hidden="true">АР</div><div class="footer__logo-text">Академия на русском<span>Онлайн-школа для детей</span></div></a><p class="footer__tagline">Живые уроки русского языка и математики.</p><div class="footer__social"><a href="https://t.me/russchool_online" class="social-btn" aria-label="Telegram">TG</a><a href="https://wa.me/79000000000" class="social-btn" aria-label="WhatsApp">WA</a></div></div>
+    <div><div class="footer__col-title">Школа</div><nav class="footer__links"><a href="courses.html">Программы</a><a href="teachers.html">Учителя</a><a href="schedule.html">Расписание</a><a href="prices.html">Цены</a><a href="about.html">О школе</a><a href="contacts.html">Контакты</a></nav></div>
+    <div><div class="footer__col-title">Предметы</div><div class="footer__links"><a href="courses.html#russian">Русский язык</a><a href="courses.html#math">Математика</a><a href="courses.html#combo">Комплексная</a></div></div>
+    <div><div class="footer__col-title">Контакты</div><div class="footer__contact-item"><span>✉</span><a href="mailto:hello@russchool.online">hello@russchool.online</a></div><div class="footer__contact-item"><span>📱</span><a href="https://t.me/russchool_online">@russchool_online</a></div></div>
   </div>
-</footer>
+  <div class="footer__bottom"><div>© 2024–2025 Академия на русском</div><div><a href="#">Конфиденциальность</a></div></div>
+</div></footer>
+
+<div class="mobile-cta-bar" id="mobileCta">
+  <a href="contacts.html" class="btn btn--accent">Записаться бесплатно</a>
+  <a href="https://t.me/russchool_online" class="btn btn--tg" target="_blank" rel="noopener">TG</a>
+</div>
 
 <script src="js/main.js"></script>
+<script>
+const prices = {
+  monthly:    { start: 80, main: 120, intensive: 160 },
+  quarterly:  { start: 72, main: 108, intensive: 144 },
+  yearly:     { start: 64, main:  96, intensive: 128 }
+};
+const periods = { monthly: 'оплата ежемесячно', quarterly: 'оплата за квартал', yearly: 'оплата за год' };
+
+function setPricePeriod(period, btn) {
+  document.querySelectorAll('.pricing-toggle__btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+  btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
+
+  const vals = [prices[period].start, prices[period].main, prices[period].intensive];
+  const monthly = [prices.monthly.start, prices.monthly.main, prices.monthly.intensive];
+  document.querySelectorAll('.price-value').forEach((el, i) => { el.textContent = vals[i]; });
+  document.querySelectorAll('.period-label').forEach(el => { el.textContent = periods[period]; });
+
+  // Показать/скрыть оригинальную цену
+  document.querySelectorAll('.pricing-card__original').forEach((el, i) => {
+    if (period !== 'monthly') {
+      el.textContent = `Без скидки: €${monthly[i]}/мес`;
+      el.style.display = 'block';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+}
+</script>
 </body>
 </html>

@@ -49,13 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.classList.add('fade-in--visible');
+        e.target.classList.add('fade-in--visible', 'visible');
         observer.unobserve(e.target);
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-in, .fade-in-up').forEach(el => observer.observe(el));
 
   /* --- Active nav link --- */
   const currentPage = location.pathname.split('/').pop() || 'index.html';

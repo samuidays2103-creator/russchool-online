@@ -3,18 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Учителя — Академия на русском</title>
-  <meta name="description" content="Опытные учителя русского языка и математики с педагогическим образованием. Живые уроки, малые группы 3–5 детей.">
+  <title>Учителя — Академия на русском | Живые уроки с опытными педагогами</title>
+  <meta name="description" content="Опытные педагоги с профильным образованием. Живые уроки — не записи. Малые группы 3–5 детей. Стаж 7–15 лет. Рейтинг 4.8–4.9.">
   <link rel="canonical" href="https://russchool.online/teachers.html">
   <meta property="og:title" content="Учителя — Академия на русском">
-  <meta property="og:description" content="Опытные учителя русского языка и математики с педагогическим образованием. Живые уроки, малые группы 3–5 детей.">
+  <meta property="og:description" content="Живые уроки с педагогами с профильным образованием и стажем 7+ лет. Русский язык и математика.">
   <meta property="og:url" content="https://russchool.online/teachers.html">
-  <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .teacher-card-full { background: var(--color-bg-card); border-radius: var(--radius-xl); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); overflow: hidden; transition: all var(--transition); }
+    .teacher-card-full:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .teacher-card-full__top { height: 6px; background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%); }
+    .teacher-card-full__body { padding: 1.75rem; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media(min-width:640px){ .teacher-card-full__body { grid-template-columns: auto 1fr; } }
+    .teacher-card-full__left { text-align: center; }
+    .teacher-card-full__avatar { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 2.25rem; color: #fff; margin: 0 auto .875rem; box-shadow: 0 4px 16px rgba(30,58,95,0.3); border: 3px solid var(--color-bg-card); outline: 3px solid var(--color-primary-light); }
+    .teacher-card-full__name { font-size: 1.1875rem; font-weight: 700; margin-bottom: .25rem; }
+    .teacher-card-full__subject { font-size: .875rem; color: var(--color-primary); font-weight: 600; margin-bottom: .2rem; }
+    .teacher-card-full__exp { font-size: .8125rem; color: var(--color-text-muted); }
+    .teacher-card-full__rating { display: flex; align-items: center; justify-content: center; gap: .375rem; margin: .625rem 0; }
+    .teacher-card-full__stars { color: var(--color-accent); font-size: .9375rem; }
+    .teacher-card-full__right {}
+    .teacher-card-full__bio { font-size: .9rem; color: var(--color-text-second); line-height: 1.7; margin-bottom: 1rem; }
+    .teacher-card-full__tags { display: flex; flex-wrap: wrap; gap: .375rem; margin-bottom: 1rem; }
+    .teacher-card-full__slots { background: var(--color-bg); border-radius: var(--radius-md); padding: 1rem 1.25rem; border: 1px solid var(--color-border); }
+    .teacher-card-full__slots-title { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--color-text-muted); margin-bottom: .625rem; }
+    .slot-list { display: flex; flex-wrap: wrap; gap: .375rem; }
+    .slot { display: inline-block; padding: .3rem .75rem; border-radius: var(--radius-full); font-size: .8125rem; font-weight: 600; }
+    .slot--available { background: var(--color-success-light); color: #065F46; }
+    .slot--almost { background: var(--color-accent-light); color: var(--color-accent-dark); }
+    .slot--full { background: var(--color-bg-section); color: var(--color-text-muted); text-decoration: line-through; }
+    .criteria-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media(min-width:640px){ .criteria-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(min-width:1024px){ .criteria-grid { grid-template-columns: repeat(4, 1fr); } }
+    .criteria-card { background: var(--color-bg-card); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center; border: 1px solid var(--color-border); }
+    .criteria-card__icon { font-size: 2rem; margin-bottom: .625rem; }
+    .criteria-card__title { font-size: .9375rem; font-weight: 700; margin-bottom: .375rem; }
+    .criteria-card__text { font-size: .8125rem; color: var(--color-text-second); line-height: 1.55; }
+  </style>
 </head>
 <body>
 
@@ -22,236 +52,250 @@
 
 <header class="header" role="banner">
   <div class="header__inner">
-    <a href="index.html" class="header__logo" aria-label="Академия на русском — главная">
-      <div class="logo__icon">АР</div>
-      <div class="logo__text">Академия на русском
-        <span>Онлайн-школа для детей</span>
-      </div>
-    </a>
-    <nav class="nav" aria-label="Основная навигация">
-      <ul class="nav__list">
-        <li><a href="index.html" class="nav__link">Главная</a></li>
-        <li><a href="courses.html" class="nav__link">Программы</a></li>
-        <li><a href="teachers.html" class="nav__link nav__link--active">Учителя</a></li>
-        <li><a href="schedule.html" class="nav__link">Расписание</a></li>
-        <li><a href="prices.html" class="nav__link">Цены</a></li>
-        <li><a href="about.html" class="nav__link">О нас</a></li>
-      </ul>
-    </nav>
+    <a href="index.html" class="header__logo"><div class="logo__icon" aria-hidden="true">АР</div><div class="logo__text">Академия на русском<span>Онлайн-школа для детей</span></div></a>
+    <nav class="nav"><ul class="nav__list">
+      <li><a href="index.html" class="nav__link">Главная</a></li>
+      <li><a href="courses.html" class="nav__link">Программы</a></li>
+      <li><a href="teachers.html" class="nav__link nav__link--active">Учителя</a></li>
+      <li><a href="schedule.html" class="nav__link">Расписание</a></li>
+      <li><a href="prices.html" class="nav__link">Цены</a></li>
+      <li><a href="about.html" class="nav__link">О школе</a></li>
+    </ul></nav>
     <div class="header__actions">
       <a href="contacts.html" class="btn btn--primary btn--sm">Записаться</a>
-      <button class="hamburger" aria-label="Открыть меню" aria-expanded="false" aria-controls="navDrawer">
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-      </button>
+      <button class="hamburger" aria-label="Открыть меню" aria-expanded="false"><span class="hamburger__line"></span><span class="hamburger__line"></span><span class="hamburger__line"></span></button>
     </div>
   </div>
 </header>
 
-<nav class="nav-drawer" id="navDrawer" aria-label="Мобильная навигация">
-  <ul class="nav-drawer__list">
-    <li><a href="index.html" class="nav-drawer__link">Главная</a></li>
-    <li><a href="courses.html" class="nav-drawer__link">Программы</a></li>
-    <li><a href="teachers.html" class="nav-drawer__link nav-drawer__link--active">Учителя</a></li>
-    <li><a href="schedule.html" class="nav-drawer__link">Расписание</a></li>
-    <li><a href="prices.html" class="nav-drawer__link">Цены</a></li>
-    <li><a href="about.html" class="nav-drawer__link">О нас</a></li>
-    <li><a href="contacts.html" class="nav-drawer__link">Контакты</a></li>
-  </ul>
-  <div class="nav-drawer__cta">
-    <a href="contacts.html" class="btn btn--primary w-full">Записаться</a>
-  </div>
-</nav>
+<nav class="nav-drawer"><ul class="nav-drawer__list">
+  <li><a href="index.html" class="nav-drawer__link">Главная</a></li>
+  <li><a href="courses.html" class="nav-drawer__link">Программы</a></li>
+  <li><a href="teachers.html" class="nav-drawer__link nav-drawer__link--active">Учителя</a></li>
+  <li><a href="schedule.html" class="nav-drawer__link">Расписание</a></li>
+  <li><a href="prices.html" class="nav-drawer__link">Цены</a></li>
+  <li><a href="about.html" class="nav-drawer__link">О школе</a></li>
+  <li><a href="contacts.html" class="nav-drawer__link">Контакты</a></li>
+</ul><div class="nav-drawer__cta"><a href="contacts.html" class="btn btn--accent btn--wide">Записаться на пробный урок</a></div></nav>
 
 <main id="main">
 
-<!-- ========== HERO ========== -->
-<section class="hero hero--short" aria-label="Учителя">
-  <div class="hero__particles" aria-hidden="true"></div>
+<section class="hero hero--short" aria-label="Учителя школы">
+  <div class="hero__bg-glow" aria-hidden="true"></div>
   <div class="hero__content">
-    <div class="hero__badge">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      Живые уроки · Не записи
-    </div>
-    <h1 class="hero__title">Наши учителя</h1>
-    <p class="hero__text">Живые уроки с настоящими педагогами, не с записями и роботами</p>
-  </div>
-</section>
-
-<!-- ========== ПРИНЦИПЫ ========== -->
-<section class="section" id="principles">
-  <div class="container">
-    <div class="section__header fade-in">
-      <div class="section__label">Наш подход</div>
-      <h2 class="section__title">Наши принципы</h2>
-      <p class="section__subtitle">Мы отбираем учителей строго — потому что ваш ребёнок заслуживает лучшего.</p>
-    </div>
-    <div class="benefits-grid">
-      <div class="benefit-card fade-in">
-        <div class="benefit-card__icon">🎓</div>
-        <h3 class="benefit-card__title">Педагогическое образование</h3>
-        <p class="benefit-card__text">Только дипломированные педагоги с профильным образованием. Средний стаж учителей — 10+ лет. Мы не берём студентов и «репетиторов без опыта».</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-card__icon">🌍</div>
-        <h3 class="benefit-card__title">Опыт с диаспорой</h3>
-        <p class="benefit-card__text">Наши учителя умеют работать именно с детьми, живущими вне русскоязычной среды. Это особая специализация — нужен другой темп, другие подходы, другой словарный запас.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-card__icon">🔒</div>
-        <h3 class="benefit-card__title">Стабильность</h3>
-        <p class="benefit-card__text">Учитель не меняется без причины — ребёнок привыкает к педагогу, и это важно. При болезни всегда есть замена, которую знают заранее. Никаких неожиданностей.</p>
-      </div>
+    <div class="hero__main-col">
+      <div class="hero__badge">Живые уроки · Не записи</div>
+      <h1 class="hero__title">Наши педагоги</h1>
+      <p class="hero__text">Настоящие учителя, которые знают вашего ребёнка по имени. Профильное образование, стаж от 7 лет, рейтинг 4.8+.</p>
     </div>
   </div>
 </section>
 
-<!-- ========== КОМАНДА ========== -->
-<section class="section section--alt" id="team">
+<div class="breadcrumb"><div class="container"><a href="index.html">Главная</a><span class="breadcrumb__sep">›</span><span>Учителя</span></div></div>
+
+<!-- ========== КАК МЫ ОТБИРАЕМ ========== -->
+<section class="section section--warm" id="criteria">
   <div class="container">
-    <div class="section__header fade-in">
-      <div class="section__label">Команда</div>
-      <h2 class="section__title">Команда учителей</h2>
-      <p class="section__subtitle">6 педагогов, специализированных по предметам, возрасту и рынкам.</p>
+    <div class="section__header fade-in-up">
+      <div class="section__label">Отбор педагогов</div>
+      <h2 class="section__title">Как мы выбираем учителей</h2>
+      <p class="section__subtitle">Мы не берём всех подряд. Каждый учитель проходит многоэтапный отбор</p>
     </div>
-    <div class="teachers-grid">
-
-      <div class="teacher-card fade-in">
-        <div class="teacher-card__avatar">АС</div>
-        <h3 class="teacher-card__name">Анна Михайловна Соколова</h3>
-        <div class="teacher-card__role">Русский язык и литература</div>
-        <p class="teacher-card__bio">12 лет стажа. Диплом МГПУ. Специализируется на детях 7–10 лет, уровни A1–B2. Работает преимущественно с семьями из ОАЭ и ЮВА — понимает, как устроена жизнь ребёнка в иноязычной среде.</p>
-        <div class="teacher-card__tags">
-          <span class="tag">7–10 лет</span>
-          <span class="tag">A1–B2</span>
-          <span class="tag">ОАЭ · ЮВА</span>
-          <span class="tag">12 лет стажа</span>
-        </div>
+    <div class="criteria-grid">
+      <div class="criteria-card fade-in-up">
+        <div class="criteria-card__icon">🎓</div>
+        <div class="criteria-card__title">Профильное образование</div>
+        <p class="criteria-card__text">Педагогический университет, специальность «учитель русского языка» или «учитель математики». Не просто репетитор.</p>
       </div>
-
-      <div class="teacher-card fade-in">
-        <div class="teacher-card__avatar">НК</div>
-        <h3 class="teacher-card__name">Наталья Кузнецова</h3>
-        <div class="teacher-card__role">Русский язык · Старшие группы</div>
-        <p class="teacher-card__bio">9 лет стажа. РГПУ им. Герцена. Ведёт группы 10–12 лет, уровни B2–C1. Помогает готовиться к получению аттестата РФ и поступлению в российские вузы из-за рубежа.</p>
-        <div class="teacher-card__tags">
-          <span class="tag">10–12 лет</span>
-          <span class="tag">B2–C1</span>
-          <span class="tag">Аттестат РФ</span>
-          <span class="tag">9 лет стажа</span>
-        </div>
+      <div class="criteria-card fade-in-up">
+        <div class="criteria-card__icon">📅</div>
+        <div class="criteria-card__title">Стаж от 5 лет</div>
+        <p class="criteria-card__text">Минимум 5 лет реальной работы с детьми. Опыт в онлайн-формате — обязателен. Умение держать внимание онлайн-класса — отдельный навык.</p>
       </div>
-
-      <div class="teacher-card fade-in">
-        <div class="teacher-card__avatar">СМ</div>
-        <h3 class="teacher-card__name">Сергей Владимирович Морозов</h3>
-        <div class="teacher-card__role">Математика</div>
-        <p class="teacher-card__bio">15 лет стажа. Физмат МГУ. Работает с детьми 8–12 лет, программа 1–6 класс. Участник олимпиадного движения, умеет зажечь интерес к математике через задачи и логику.</p>
-        <div class="teacher-card__tags">
-          <span class="tag">8–12 лет</span>
-          <span class="tag">1–6 класс</span>
-          <span class="tag">Олимпиады</span>
-          <span class="tag">15 лет стажа</span>
-        </div>
+      <div class="criteria-card fade-in-up">
+        <div class="criteria-card__icon">🧪</div>
+        <div class="criteria-card__title">Пробный урок</div>
+        <p class="criteria-card__text">Каждый кандидат проводит тестовый урок под наблюдением. Оцениваем методику, общение с детьми, реакцию на неожиданные ситуации.</p>
       </div>
-
-      <div class="teacher-card fade-in">
-        <div class="teacher-card__avatar">ИП</div>
-        <h3 class="teacher-card__name">Ирина Попова</h3>
-        <div class="teacher-card__role">Математика · Начальная школа</div>
-        <p class="teacher-card__bio">7 лет стажа. Педагогический институт. Специализируется на математике 1–4 класса для детей 7–9 лет. Мягкий подход, игровые методы, терпение — идеально для тех, кто только начинает.</p>
-        <div class="teacher-card__tags">
-          <span class="tag">7–9 лет</span>
-          <span class="tag">1–4 класс</span>
-          <span class="tag">Начинающие</span>
-          <span class="tag">7 лет стажа</span>
-        </div>
-      </div>
-
-      <div class="teacher-card fade-in">
-        <div class="teacher-card__avatar">ЕБ</div>
-        <h3 class="teacher-card__name">Елена Белова</h3>
-        <div class="teacher-card__role">Русский язык · Германия</div>
-        <p class="teacher-card__bio">10 лет стажа. Живёт в Германии 5 лет, сама растит детей в немецкой школьной системе. Понимает специфику русскоязычных семей именно в Германии: давление немецкого, субботние школы, баланс двух языков.</p>
-        <div class="teacher-card__tags">
-          <span class="tag">Германия</span>
-          <span class="tag">Bilingual</span>
-          <span class="tag">7–12 лет</span>
-          <span class="tag">10 лет стажа</span>
-        </div>
-      </div>
-
-      <div class="teacher-card fade-in">
-        <div class="teacher-card__avatar">ДО</div>
-        <h3 class="teacher-card__name">Дмитрий Орлов</h3>
-        <div class="teacher-card__role">Математика · Олимпиадная подготовка</div>
-        <p class="teacher-card__bio">8 лет стажа. Призёр математических олимпиад. Работает с детьми 10–12 лет, которые хотят большего, чем школьная программа. Готовит к олимпиадам, развивает нестандартное мышление.</p>
-        <div class="teacher-card__tags">
-          <span class="tag">10–12 лет</span>
-          <span class="tag">Олимпиады</span>
-          <span class="tag">Углублённо</span>
-          <span class="tag">8 лет стажа</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ========== МЕТОДИКА ========== -->
-<section class="section" id="methodology">
-  <div class="container">
-    <div class="section__header fade-in">
-      <div class="section__label">Как мы работаем</div>
-      <h2 class="section__title">Методика работы</h2>
-      <p class="section__subtitle">Четыре этапа — от знакомства до результата. Никаких шаблонов, каждый ребёнок — отдельный подход.</p>
-    </div>
-    <div class="steps fade-in">
-      <div class="step">
-        <div class="step__num">1</div>
-        <div class="step__content">
-          <h3 class="step__title">Перед первым уроком: изучаем ребёнка</h3>
-          <p class="step__text">Родители заполняют анкету: история обучения, текущий уровень, сильные и слабые стороны, особенности ребёнка. Учитель читает анкету до начала занятий — чтобы с первой минуты говорить с ребёнком правильно.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step__num">2</div>
-        <div class="step__content">
-          <h3 class="step__title">На пробном уроке: диагностика без стресса</h3>
-          <p class="step__text">Первый урок — не экзамен. Учитель в игровой форме определяет реальный уровень: что ребёнок умеет, что пропустил, где есть пробелы. Ребёнок не чувствует оценки — он просто общается.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step__num">3</div>
-        <div class="step__content">
-          <h3 class="step__title">В процессе: живой контакт и домашние задания</h3>
-          <p class="step__text">Учитель знает каждого ребёнка по имени, помнит его особенности, шутит с ним. Домашние задания — обязательны и проверяются. Ошибки разбираются на следующем уроке, не остаются незамеченными.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step__num">4</div>
-        <div class="step__content">
-          <h3 class="step__title">Еженедельно: отчёт для родителей</h3>
-          <p class="step__text">Каждую неделю родители получают короткий отчёт: что прошли, что получилось, что ещё не даётся, над чем работаем. Вы всегда знаете, на каком этапе ваш ребёнок.</p>
-        </div>
+      <div class="criteria-card fade-in-up">
+        <div class="criteria-card__icon">⭐</div>
+        <div class="criteria-card__title">Рейтинг 4.7+</div>
+        <p class="criteria-card__text">Постоянная обратная связь от родителей. Если рейтинг падает ниже 4.7 — разбираем причины и помогаем исправить. Ниже 4.5 — расстаёмся.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== НАБОР УЧИТЕЛЕЙ ========== -->
-<section class="section section--dark" id="join">
+<!-- ========== УЧИТЕЛЯ ========== -->
+<section class="section section--white" id="teachers">
   <div class="container">
-    <div style="max-width:640px;margin:0 auto;text-align:center;">
-      <div class="section__label">Для педагогов</div>
-      <h2 class="section__title" style="margin-bottom:1rem;">Хотите стать учителем?</h2>
-      <p style="color:rgba(255,255,255,.75);font-size:1.05rem;line-height:1.75;margin-bottom:2rem;">
-        Мы периодически открываем набор новых учителей. Нам нужны педагоги с профильным образованием,
-        опытом работы с детьми 7–12 лет и желанием работать с диаспорой. Удалённый формат, стабильные группы,
-        справедливая оплата. Если вы учитель русского языка или математики — напишите нам.
-      </p>
-      <a href="mailto:hello@russchool.online?subject=Хочу преподавать" class="btn btn--accent btn--lg">Написать нам</a>
+    <div class="section__header fade-in-up">
+      <div class="section__label">Педагоги</div>
+      <h2 class="section__title">Познакомьтесь с командой</h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:1.5rem">
+
+      <!-- Учитель 1 -->
+      <article class="teacher-card-full fade-in-up" itemscope itemtype="https://schema.org/Person">
+        <div class="teacher-card-full__top"></div>
+        <div class="teacher-card-full__body">
+          <div class="teacher-card-full__left">
+            <div class="teacher-card-full__avatar" aria-label="Мария Ивановна" style="background:linear-gradient(135deg, var(--color-subject-ru) 0%, #7C3AED 100%)">МИ</div>
+            <div class="teacher-card-full__name" itemprop="name">Мария Ивановна С.</div>
+            <div class="teacher-card-full__subject" itemprop="jobTitle">Русский язык и литература</div>
+            <div class="teacher-card-full__exp">Стаж: 12 лет · МПГУ</div>
+            <div class="teacher-card-full__rating">
+              <span class="teacher-card-full__stars" aria-label="Рейтинг 4.9">★★★★★</span>
+              <strong>4.9</strong>
+              <span style="font-size:.8125rem;color:var(--color-text-muted)">(94)</span>
+            </div>
+            <a href="contacts.html" class="btn btn--primary btn--sm" style="margin-top:.625rem">Записаться</a>
+          </div>
+          <div class="teacher-card-full__right">
+            <p class="teacher-card-full__bio" itemprop="description">
+              Окончила Московский педагогический государственный университет, специальность «Русский язык и литература». 12 лет в профессии, из них 5 лет в онлайн-формате. Специализируется на работе с детьми-билингвами и детьми диаспоры. Умеет объяснить сложные правила грамматики простыми словами, находит нестандартный подход к каждому ребёнку. Особый интерес — детская литература и развитие речи.
+            </p>
+            <div class="teacher-card-full__tags">
+              <span class="tag">1–4 класс</span>
+              <span class="tag">5–9 класс</span>
+              <span class="tag">Билингвы</span>
+              <span class="tag">Подготовка к ОГЭ</span>
+              <span class="tag">Литература</span>
+            </div>
+            <div class="teacher-card-full__slots">
+              <div class="teacher-card-full__slots-title">Ближайшие свободные группы (МСК)</div>
+              <div class="slot-list">
+                <span class="slot slot--available">Пн 18:00 (1 место)</span>
+                <span class="slot slot--almost">Ср 16:00 (2 места)</span>
+                <span class="slot slot--full">Пт 17:00 (занято)</span>
+                <span class="slot slot--available">Сб 10:00 (3 места)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Учитель 2 -->
+      <article class="teacher-card-full fade-in-up" itemscope itemtype="https://schema.org/Person">
+        <div class="teacher-card-full__top"></div>
+        <div class="teacher-card-full__body">
+          <div class="teacher-card-full__left">
+            <div class="teacher-card-full__avatar" aria-label="Пётр Сергеевич" style="background:linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)">ПС</div>
+            <div class="teacher-card-full__name" itemprop="name">Пётр Сергеевич К.</div>
+            <div class="teacher-card-full__subject" itemprop="jobTitle">Математика</div>
+            <div class="teacher-card-full__exp">Стаж: 9 лет · МФТИ</div>
+            <div class="teacher-card-full__rating">
+              <span class="teacher-card-full__stars" aria-label="Рейтинг 4.8">★★★★★</span>
+              <strong>4.8</strong>
+              <span style="font-size:.8125rem;color:var(--color-text-muted)">(71)</span>
+            </div>
+            <a href="contacts.html" class="btn btn--primary btn--sm" style="margin-top:.625rem">Записаться</a>
+          </div>
+          <div class="teacher-card-full__right">
+            <p class="teacher-card-full__bio" itemprop="description">
+              Окончил Московский физико-технический институт, кандидат физико-математических наук. 9 лет преподаёт математику детям — от первоклассников до девятиклассников. Умеет одновременно работать с разными темпами в группе. Обожает олимпиадные задачи и учит детей не бояться сложного. Многие его ученики побеждали на городских математических олимпиадах.
+            </p>
+            <div class="teacher-card-full__tags">
+              <span class="tag">1–6 класс</span>
+              <span class="tag">7–9 класс</span>
+              <span class="tag">Олимпиадная математика</span>
+              <span class="tag">Алгебра</span>
+              <span class="tag">Геометрия</span>
+            </div>
+            <div class="teacher-card-full__slots">
+              <div class="teacher-card-full__slots-title">Ближайшие свободные группы (МСК)</div>
+              <div class="slot-list">
+                <span class="slot slot--almost">Вт 17:00 (2 места)</span>
+                <span class="slot slot--available">Чт 19:00 (3 места)</span>
+                <span class="slot slot--full">Сб 11:00 (занято)</span>
+                <span class="slot slot--available">Вс 10:00 (1 место)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Учитель 3 -->
+      <article class="teacher-card-full fade-in-up" itemscope itemtype="https://schema.org/Person">
+        <div class="teacher-card-full__top"></div>
+        <div class="teacher-card-full__body">
+          <div class="teacher-card-full__left">
+            <div class="teacher-card-full__avatar" aria-label="Елена Андреевна" style="background:linear-gradient(135deg, #EC4899 0%, #9333EA 100%)">ЕА</div>
+            <div class="teacher-card-full__name" itemprop="name">Елена Андреевна В.</div>
+            <div class="teacher-card-full__subject" itemprop="jobTitle">Русский язык (начальная школа)</div>
+            <div class="teacher-card-full__exp">Стаж: 7 лет · УрГПУ</div>
+            <div class="teacher-card-full__rating">
+              <span class="teacher-card-full__stars" aria-label="Рейтинг 4.9">★★★★★</span>
+              <strong>4.9</strong>
+              <span style="font-size:.8125rem;color:var(--color-text-muted)">(58)</span>
+            </div>
+            <a href="contacts.html" class="btn btn--primary btn--sm" style="margin-top:.625rem">Записаться</a>
+          </div>
+          <div class="teacher-card-full__right">
+            <p class="teacher-card-full__bio" itemprop="description">
+              Специалист по работе с дошкольниками и учениками 1–3 класса. Использует авторскую методику игрового обучения чтению и письму. Дети с ней буквально влюбляются в русский язык — занятия проходят легко и весело, но без потери качества. Особый опыт работы с детьми, которые только начинают учить русский письменный язык.
+            </p>
+            <div class="teacher-card-full__tags">
+              <span class="tag">Дошколята (5–6 лет)</span>
+              <span class="tag">1–3 класс</span>
+              <span class="tag">Игровой метод</span>
+              <span class="tag">Начало чтения</span>
+            </div>
+            <div class="teacher-card-full__slots">
+              <div class="teacher-card-full__slots-title">Ближайшие свободные группы (МСК)</div>
+              <div class="slot-list">
+                <span class="slot slot--available">Пн 16:00 (2 места)</span>
+                <span class="slot slot--available">Ср 16:00 (1 место)</span>
+                <span class="slot slot--almost">Пт 15:00 (2 места)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Учитель 4 -->
+      <article class="teacher-card-full fade-in-up" itemscope itemtype="https://schema.org/Person">
+        <div class="teacher-card-full__top"></div>
+        <div class="teacher-card-full__body">
+          <div class="teacher-card-full__left">
+            <div class="teacher-card-full__avatar" aria-label="Иван Николаевич" style="background:linear-gradient(135deg, #0D9488 0%, #1D4ED8 100%)">ИН</div>
+            <div class="teacher-card-full__name" itemprop="name">Иван Николаевич М.</div>
+            <div class="teacher-card-full__subject" itemprop="jobTitle">Математика (5–9 класс)</div>
+            <div class="teacher-card-full__exp">Стаж: 11 лет · МГУ, механико-математический</div>
+            <div class="teacher-card-full__rating">
+              <span class="teacher-card-full__stars" aria-label="Рейтинг 4.8">★★★★★</span>
+              <strong>4.8</strong>
+              <span style="font-size:.8125rem;color:var(--color-text-muted)">(62)</span>
+            </div>
+            <a href="contacts.html" class="btn btn--primary btn--sm" style="margin-top:.625rem">Записаться</a>
+          </div>
+          <div class="teacher-card-full__right">
+            <p class="teacher-card-full__bio" itemprop="description">
+              Окончил МГУ, механико-математический факультет. Специализируется на подростках 12–16 лет. Строгий, но справедливый — ученики его уважают. Умеет объяснить алгебру и геометрию так, что становится понятно. Несколько его учеников поступили в топовые технические вузы России. Ведёт подготовку к ОГЭ.
+            </p>
+            <div class="teacher-card-full__tags">
+              <span class="tag">5–9 класс</span>
+              <span class="tag">Алгебра</span>
+              <span class="tag">Геометрия</span>
+              <span class="tag">Подготовка к ОГЭ</span>
+            </div>
+            <div class="teacher-card-full__slots">
+              <div class="teacher-card-full__slots-title">Ближайшие свободные группы (МСК)</div>
+              <div class="slot-list">
+                <span class="slot slot--available">Пн 20:00 (2 места)</span>
+                <span class="slot slot--available">Чт 20:00 (3 места)</span>
+                <span class="slot slot--full">Сб 12:00 (занято)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="notice mt-4 fade-in-up" style="max-width:680px;margin-left:auto;margin-right:auto;margin-top:2rem">
+      Хотите записаться к конкретному учителю? Укажите имя учителя при заполнении заявки — мы постараемся подобрать место в его группе.
     </div>
   </div>
 </section>
@@ -259,57 +303,31 @@
 <!-- ========== CTA ========== -->
 <section class="cta-section">
   <div class="container">
-    <h2>Познакомьтесь с учителем лично</h2>
-    <p>Пробный урок — бесплатно. Ваш ребёнок увидит учителя и формат до того, как вы примете решение.</p>
-    <div class="btn-group">
-      <a href="contacts.html" class="btn btn--accent btn--lg">Записаться на пробный урок</a>
-      <a href="schedule.html" class="btn btn--outline-white btn--lg">Посмотреть расписание</a>
+    <h2 class="fade-in-up">Познакомьтесь с учителем лично</h2>
+    <p class="fade-in-up">Запишитесь на бесплатный пробный урок — вы увидите, как учитель работает с вашим ребёнком</p>
+    <div class="btn-group fade-in-up" style="justify-content:center">
+      <a href="contacts.html" class="btn btn--accent btn--lg">Пробный урок бесплатно</a>
+      <a href="schedule.html" class="btn btn--outline-white">Посмотреть расписание</a>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <div style="display:flex;align-items:center;gap:.625rem;margin-bottom:1rem;">
-          <div class="logo__icon">АР</div>
-          <span style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;">Академия на русском</span>
-        </div>
-        <p class="footer__tagline">Школа на русском языке для детей русскоязычной диаспоры. Русский язык и математика, возраст 7–12 лет.</p>
-      </div>
-      <div>
-        <div class="footer__col-title">Школа</div>
-        <ul class="footer__links">
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="teachers.html">Учителя</a></li>
-          <li><a href="courses.html">Программы</a></li>
-          <li><a href="schedule.html">Расписание</a></li>
-          <li><a href="prices.html">Цены</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer__col-title">Программы</div>
-        <ul class="footer__links">
-          <li><a href="courses.html#russian">Русский язык</a></li>
-          <li><a href="courses.html#math">Математика</a></li>
-          <li><a href="courses.html#combo">Комплексная</a></li>
-          <li><a href="courses.html#attestat">Аттестат РФ</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer__col-title">Контакты</div>
-        <div class="footer__contacts">
-          <div class="footer__contact"><span>✈</span><a href="https://t.me/russchoolonline">@russchoolonline</a></div>
-          <div class="footer__contact"><span>@</span><a href="mailto:hello@russchool.online">hello@russchool.online</a></div>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom"><span>© 2024–2026 Академия на русском</span></div>
+<footer class="footer"><div class="container">
+  <div class="footer__grid">
+    <div class="footer__brand"><a href="index.html" class="footer__logo-link"><div class="footer__logo-icon" aria-hidden="true">АР</div><div class="footer__logo-text">Академия на русском<span>Онлайн-школа для детей</span></div></a><p class="footer__tagline">Живые уроки русского языка и математики.</p><div class="footer__social"><a href="https://t.me/russchool_online" class="social-btn" aria-label="Telegram">TG</a><a href="https://wa.me/79000000000" class="social-btn" aria-label="WhatsApp">WA</a></div></div>
+    <div><div class="footer__col-title">Школа</div><nav class="footer__links"><a href="courses.html">Программы</a><a href="teachers.html">Учителя</a><a href="schedule.html">Расписание</a><a href="prices.html">Цены</a><a href="about.html">О школе</a><a href="contacts.html">Контакты</a></nav></div>
+    <div><div class="footer__col-title">Предметы</div><div class="footer__links"><a href="courses.html#russian">Русский язык</a><a href="courses.html#math">Математика</a><a href="courses.html#combo">Комплексная</a></div></div>
+    <div><div class="footer__col-title">Контакты</div><div class="footer__contact-item"><span>✉</span><a href="mailto:hello@russchool.online">hello@russchool.online</a></div><div class="footer__contact-item"><span>📱</span><a href="https://t.me/russchool_online">@russchool_online</a></div></div>
   </div>
-</footer>
+  <div class="footer__bottom"><div>© 2024–2025 Академия на русском</div><div><a href="#">Конфиденциальность</a></div></div>
+</div></footer>
+
+<div class="mobile-cta-bar" id="mobileCta">
+  <a href="contacts.html" class="btn btn--accent">Записаться бесплатно</a>
+  <a href="https://t.me/russchool_online" class="btn btn--tg" target="_blank" rel="noopener">TG</a>
+</div>
 
 <script src="js/main.js"></script>
 </body>

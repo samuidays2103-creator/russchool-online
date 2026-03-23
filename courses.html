@@ -3,48 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Программы обучения — Русский язык и математика онлайн для детей</title>
-  <meta name="description" content="Подробные программы обучения: русский язык (уровни A1–C1), математика 1–6 класс, комплексная программа. Советская методика. Дети 7–12 лет за рубежом.">
+  <title>Программы обучения — Академия на русском | Русский язык и математика онлайн</title>
+  <meta name="description" content="Подробные программы обучения: русский язык (1–9 класс), математика (1–9 класс), комплексная программа. Живые уроки малыми группами 3–5 детей.">
   <link rel="canonical" href="https://russchool.online/courses.html">
-  <meta property="og:title" content="Программы обучения | Академия на русском">
-  <meta property="og:description" content="Русский язык и математика для детей диаспоры 7–12 лет. Группы 3–5 человек, живые уроки.">
+  <meta property="og:title" content="Программы обучения — Академия на русском">
+  <meta property="og:description" content="Русский язык и математика для детей 6–16 лет. Группы 3–5 человек, живые уроки, расписание под ваш часовой пояс.">
+  <meta property="og:url" content="https://russchool.online/courses.html">
+  <meta property="og:locale" content="ru_RU">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .curriculum-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    .curriculum-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
     .curriculum-table th { background: var(--color-primary); color: #fff; padding: .75rem 1rem; text-align: left; font-weight: 600; }
-    .curriculum-table td { padding: .75rem 1rem; border-bottom: 1px solid var(--color-border); vertical-align: top; }
-    .curriculum-table tr:nth-child(even) td { background: var(--color-bg-alt); }
-    .curriculum-table tr:hover td { background: #eef2ff; }
-    .level-badge { display: inline-block; padding: .2rem .6rem; border-radius: var(--radius-full); font-size: .75rem; font-weight: 700; text-transform: uppercase; }
-    .level-badge--a { background: #dcfce7; color: #16a34a; }
-    .level-badge--b { background: #dbeafe; color: #1d4ed8; }
-    .level-badge--c { background: #ede9fe; color: #7c3aed; }
-    .program-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    .program-tab { padding: .5rem 1.25rem; border-radius: var(--radius-full); background: var(--color-bg-alt); border: 2px solid var(--color-border); font-weight: 600; font-size: .9rem; cursor: pointer; transition: all var(--transition); }
-    .program-tab.active, .program-tab:hover { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+    .curriculum-table td { padding: .75rem 1rem; border-bottom: 1px solid var(--color-border); vertical-align: top; line-height: 1.55; }
+    .curriculum-table tr:nth-child(even) td { background: var(--color-bg); }
+    .curriculum-table tr:hover td { background: var(--color-primary-light); }
+    .level-badge { display: inline-block; padding: .2rem .5rem; border-radius: var(--radius-full); font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .level-badge--a { background: #D1FAE5; color: #065F46; }
+    .level-badge--b { background: var(--color-primary-light); color: var(--color-primary); }
+    .level-badge--c { background: #EDE9FE; color: #5B21B6; }
+    .filter-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .filter-tab { padding: .45rem 1.125rem; border-radius: var(--radius-full); background: var(--color-bg-card); border: 2px solid var(--color-border); font-weight: 600; font-size: .875rem; cursor: pointer; transition: all var(--transition); color: var(--color-text-second); }
+    .filter-tab.active, .filter-tab:hover { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+    .course-detail { display: none; }
+    .course-detail.active { display: block; }
+    .method-card { background: var(--color-bg-card); border-radius: var(--radius-lg); padding: 1.5rem; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); }
+    .method-card h4 { font-size: 1rem; margin-bottom: .5rem; }
+    .method-card p { font-size: .875rem; color: var(--color-text-second); line-height: 1.65; }
+    .method-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media(min-width:768px){ .method-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(min-width:1024px){ .method-grid { grid-template-columns: repeat(3, 1fr); } }
+    .subject-icon-lg { width: 72px; height: 72px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1rem; }
   </style>
 </head>
 <body>
 
 <a href="#main" class="skip-link">Перейти к содержимому</a>
 
-<header class="header">
+<header class="header" role="banner">
   <div class="header__inner">
-    <a href="index.html" class="header__logo">
-      <div class="logo__icon">АР</div>
+    <a href="index.html" class="header__logo" aria-label="Академия на русском — главная">
+      <div class="logo__icon" aria-hidden="true">АР</div>
       <div class="logo__text">Академия на русском<span>Онлайн-школа для детей</span></div>
     </a>
-    <nav class="nav">
+    <nav class="nav" aria-label="Основная навигация">
       <ul class="nav__list">
         <li><a href="index.html" class="nav__link">Главная</a></li>
         <li><a href="courses.html" class="nav__link nav__link--active">Программы</a></li>
         <li><a href="teachers.html" class="nav__link">Учителя</a></li>
         <li><a href="schedule.html" class="nav__link">Расписание</a></li>
         <li><a href="prices.html" class="nav__link">Цены</a></li>
-        <li><a href="about.html" class="nav__link">О нас</a></li>
+        <li><a href="about.html" class="nav__link">О школе</a></li>
       </ul>
     </nav>
     <div class="header__actions">
@@ -56,27 +67,29 @@
   </div>
 </header>
 
-<nav class="nav-drawer">
+<nav class="nav-drawer" aria-label="Мобильная навигация">
   <ul class="nav-drawer__list">
     <li><a href="index.html" class="nav-drawer__link">Главная</a></li>
-    <li><a href="courses.html" class="nav-drawer__link nav-drawer__link--active">Программы обучения</a></li>
-    <li><a href="teachers.html" class="nav-drawer__link">Наши учителя</a></li>
+    <li><a href="courses.html" class="nav-drawer__link nav-drawer__link--active">Программы</a></li>
+    <li><a href="teachers.html" class="nav-drawer__link">Учителя</a></li>
     <li><a href="schedule.html" class="nav-drawer__link">Расписание</a></li>
-    <li><a href="prices.html" class="nav-drawer__link">Цены и тарифы</a></li>
+    <li><a href="prices.html" class="nav-drawer__link">Цены</a></li>
     <li><a href="about.html" class="nav-drawer__link">О школе</a></li>
     <li><a href="contacts.html" class="nav-drawer__link">Контакты</a></li>
   </ul>
-  <div class="nav-drawer__cta"><a href="contacts.html" class="btn btn--primary w-full">Записаться на пробный урок</a></div>
+  <div class="nav-drawer__cta"><a href="contacts.html" class="btn btn--accent btn--wide">Записаться на пробный урок</a></div>
 </nav>
 
 <main id="main">
-<!-- HERO SHORT -->
-<section class="hero hero--short">
-  <div class="hero__particles"></div>
+
+<section class="hero hero--short" aria-label="Программы обучения">
+  <div class="hero__bg-glow" aria-hidden="true"></div>
   <div class="hero__content">
-    <div class="hero__badge">Программы обучения</div>
-    <h1 class="hero__title">Учебные программы<br><em>Академии на русском</em></h1>
-    <p class="hero__text">Русский язык и математика по российским стандартам. Советская методика, которая дала миру лучших математиков и литераторов.</p>
+    <div class="hero__main-col">
+      <div class="hero__badge">Программы обучения</div>
+      <h1 class="hero__title">Учебные программы<br><em>Академии на русском</em></h1>
+      <p class="hero__text">Русский язык и математика по российским стандартам. Живые уроки с опытными педагогами, не видеозаписи.</p>
+    </div>
   </div>
 </section>
 
@@ -88,129 +101,94 @@
   </div>
 </div>
 
-<!-- OVERVIEW -->
-<section class="section">
+<!-- ========== ФИЛЬТРЫ + ПРОГРАММЫ ========== -->
+<section class="section section--white" id="programs">
   <div class="container">
-    <div class="section__header fade-in">
-      <div class="section__label">Что мы преподаём</div>
-      <h2 class="section__title">Два предмета — сильная база</h2>
-      <p class="section__subtitle">Русский язык и математика — это не просто школьные предметы. Это инструменты мышления, которые открывают двери в любые вузы мира.</p>
-    </div>
-    <div class="benefits-grid">
-      <div class="benefit-card fade-in">
-        <div class="benefit-card__icon">📖</div>
-        <h3 class="benefit-card__title">Программа «Школа России»</h3>
-        <p class="benefit-card__text">Официальная программа ФГОС, признанная государством РФ. Ребёнок сможет перейти в российскую школу без потерь или сдать аттестат.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-card__icon">🧮</div>
-        <h3 class="benefit-card__title">Математика Моро и Петерсон</h3>
-        <p class="benefit-card__text">Два подхода: классический Моро для системного освоения и Петерсон для нестандартного мышления. Дети опережают сверстников из местных школ.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-card__icon">🎯</div>
-        <h3 class="benefit-card__title">Индивидуальная траектория</h3>
-        <p class="benefit-card__text">Перед началом — тестирование. Каждый ребёнок попадает в группу по своему уровню, не «средней» группы, которая никому не подходит.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RUSSIAN LANGUAGE -->
-<section class="section section--alt" id="russian">
-  <div class="container">
-    <div class="section__header fade-in">
-      <div class="section__label">Предмет 1</div>
-      <h2 class="section__title">Русский язык и литература</h2>
-      <p class="section__subtitle">От знакомства с буквами до сочинений и анализа текста. Программа строится вокруг живого языка, а не механического запоминания правил.</p>
+    <div class="section__header fade-in-up">
+      <div class="section__label">Что изучают</div>
+      <h2 class="section__title">Два предмета, один результат</h2>
+      <p class="section__subtitle">Выберите программу или посмотрите нашу комплексную программу — она популярнее всего</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr;gap:2rem;" class="fade-in">
-      <!-- Levels -->
-      <div>
-        <h3 style="margin-bottom:1.25rem;">Уровни и возраст</h3>
-        <div style="display:flex;flex-direction:column;gap:.75rem;">
-          <div class="step">
-            <div class="step__num" style="background:#16a34a;font-size:.875rem;">A1</div>
-            <div class="step__content">
-              <h4 class="step__title">Начальный · 7–8 лет</h4>
-              <p class="step__text">Ребёнок говорит, но почти не читает и не пишет. Учимся алфавиту, слогам, простым словам. Цель — самостоятельное чтение простых текстов.</p>
+    <div class="filter-tabs" role="tablist" aria-label="Фильтр программ">
+      <button class="filter-tab active" role="tab" aria-selected="true" onclick="showCourse('all', this)">Все программы</button>
+      <button class="filter-tab" role="tab" aria-selected="false" onclick="showCourse('russian', this)">Русский язык</button>
+      <button class="filter-tab" role="tab" aria-selected="false" onclick="showCourse('math', this)">Математика</button>
+      <button class="filter-tab" role="tab" aria-selected="false" onclick="showCourse('combo', this)">Комплексная</button>
+    </div>
+
+    <!-- РУССКИЙ ЯЗЫК -->
+    <div id="course-russian" class="course-detail active">
+      <div style="display:grid;grid-template-columns:1fr;gap:2rem" id="ruGrid">
+        <article class="subject-card subject-card--ru fade-in-up" id="russian">
+          <div class="subject-card__top"></div>
+          <div class="subject-card__header">
+            <div class="subject-card__icon">📖</div>
+            <div class="subject-card__meta">
+              <div class="subject-card__badge">Русский язык</div>
+              <h2 class="subject-card__title">Русский язык и литература</h2>
+              <div class="subject-card__ages">Возраст 6–16 лет · 1–9 класс · Уровни A1–C1</div>
             </div>
           </div>
-          <div class="step">
-            <div class="step__num" style="background:#1d4ed8;font-size:.875rem;">A2</div>
-            <div class="step__content">
-              <h4 class="step__title">Элементарный · 8–9 лет</h4>
-              <p class="step__text">Чтение несложных текстов, письмо под диктовку, базовая грамматика (существительные, глаголы, падежи). Словарный запас 500–800 слов.</p>
+          <div class="subject-card__body">
+            <p class="subject-card__desc">Чтение, письмо, грамматика и богатая лексика. Мы работаем как с теми, кто только начинает читать, так и с теми, кто готовится к поступлению в российский вуз.</p>
+            <ul class="subject-card__features">
+              <li class="subject-feature">Программа «Школа России» и ФГОС</li>
+              <li class="subject-feature">Диктанты, изложения, сочинения</li>
+              <li class="subject-feature">Классическая и современная литература</li>
+              <li class="subject-feature">Развитие речи и пересказ</li>
+              <li class="subject-feature">Подготовка к аттестату РФ (по запросу)</li>
+            </ul>
+            <div class="subject-card__footer">
+              <div class="subject-card__price">от €80/мес <span>· 2 урока в нед.</span></div>
+              <a href="contacts.html" class="btn btn--primary btn--sm">Записаться</a>
             </div>
           </div>
-          <div class="step">
-            <div class="step__num" style="background:#1d4ed8;font-size:.875rem;">B1</div>
-            <div class="step__content">
-              <h4 class="step__title">Средний · 9–10 лет</h4>
-              <p class="step__text">Диктанты, пересказ, сочинения по плану. Полный набор частей речи, орфография. Первые литературные тексты (Носов, Драгунский, Успенский).</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step__num" style="background:#7c3aed;font-size:.875rem;">B2</div>
-            <div class="step__content">
-              <h4 class="step__title">Выше среднего · 10–11 лет</h4>
-              <p class="step__text">Анализ текста, свободные сочинения, стилистика. Классическая литература: Пушкин, Тургенев, Чехов в адаптации. Подготовка к аттестату.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step__num" style="background:#7c3aed;font-size:.875rem;">C1</div>
-            <div class="step__content">
-              <h4 class="step__title">Продвинутый · 11–12 лет</h4>
-              <p class="step__text">Полноценные сочинения, работа с оригинальными текстами, риторика. Уровень 5–6 класса российской школы. Аттестация при посольской школе.</p>
-            </div>
-          </div>
-        </div>
+        </article>
       </div>
 
-      <!-- Curriculum table -->
-      <div>
-        <h3 style="margin-bottom:1.25rem;">Чему учим на каждом уровне</h3>
-        <div style="overflow-x:auto;">
-          <table class="curriculum-table">
+      <div style="margin-top:2.5rem">
+        <h3 style="font-size:1.375rem;margin-bottom:1.5rem;font-weight:700">Учебный план — Русский язык</h3>
+        <div class="schedule-wrapper">
+          <table class="curriculum-table" aria-label="Учебный план по русскому языку">
             <thead>
               <tr>
-                <th>Уровень</th>
-                <th>Грамматика</th>
-                <th>Письмо</th>
-                <th>Чтение</th>
+                <th>Класс / Уровень</th>
+                <th>Раздел</th>
+                <th>Темы</th>
+                <th>Результат</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><span class="level-badge level-badge--a">A1</span></td>
-                <td>Алфавит, буквосочетания, ударение</td>
-                <td>Прописи, списывание</td>
-                <td>Слоги, простые слова</td>
+                <td><span class="level-badge level-badge--a">A1–A2</span><br>1–2 класс</td>
+                <td>Основы чтения</td>
+                <td>Алфавит, слоги, простые слова, первые предложения, печатание и написание букв</td>
+                <td>Читает простые тексты, пишет под диктовку</td>
               </tr>
               <tr>
-                <td><span class="level-badge level-badge--a">A2</span></td>
-                <td>Существительное, глагол, падежи (Им., Вин.)</td>
-                <td>Диктанты 20–30 слов</td>
-                <td>Рассказы 1–2 стр.</td>
+                <td><span class="level-badge level-badge--a">A2–B1</span><br>3–4 класс</td>
+                <td>Грамматика и письмо</td>
+                <td>Части речи, падежи, орфографические правила, изложение, сочинение по картинке</td>
+                <td>Пишет диктанты и изложения без грубых ошибок</td>
               </tr>
               <tr>
-                <td><span class="level-badge level-badge--b">B1</span></td>
-                <td>Все части речи, падежная система</td>
-                <td>Диктанты 50+ слов, изложения</td>
-                <td>Повести, пересказ</td>
+                <td><span class="level-badge level-badge--b">B1–B2</span><br>5–6 класс</td>
+                <td>Синтаксис и стиль</td>
+                <td>Сложные предложения, виды текстов (описание, рассуждение), пунктуация, анализ художественного текста</td>
+                <td>Пишет сочинения, анализирует прочитанное</td>
               </tr>
               <tr>
-                <td><span class="level-badge level-badge--b">B2</span></td>
-                <td>Сложное предложение, обороты</td>
-                <td>Сочинения 150–300 слов</td>
-                <td>Классика в адаптации</td>
+                <td><span class="level-badge level-badge--b">B2</span><br>7–8 класс</td>
+                <td>Литература и анализ</td>
+                <td>Русская классика (Пушкин, Толстой, Чехов), анализ произведений, эссе, подготовка к ОГЭ</td>
+                <td>Пишет аргументированные сочинения</td>
               </tr>
               <tr>
-                <td><span class="level-badge level-badge--c">C1</span></td>
-                <td>Синтаксис, стилистика</td>
-                <td>Сочинения 500+ слов, эссе</td>
-                <td>Оригинальные тексты</td>
+                <td><span class="level-badge level-badge--c">C1</span><br>9 класс</td>
+                <td>Подготовка к экзаменам</td>
+                <td>ОГЭ по русскому языку, изложение, сочинение-рассуждение, тестовая часть</td>
+                <td>Готов к сдаче ОГЭ в формате РФ</td>
               </tr>
             </tbody>
           </table>
@@ -218,179 +196,238 @@
       </div>
     </div>
 
-    <div class="trial-banner mt-4 fade-in">
-      <div>
-        <h3>Не знаете уровень ребёнка?</h3>
-        <p>Запишитесь на бесплатный пробный урок. Учитель сам определит уровень и подберёт группу за 30 минут.</p>
+    <!-- МАТЕМАТИКА -->
+    <div id="course-math" class="course-detail active">
+      <div style="display:grid;grid-template-columns:1fr;gap:2rem;margin-top:2rem">
+        <article class="subject-card subject-card--math fade-in-up" id="math">
+          <div class="subject-card__top"></div>
+          <div class="subject-card__header">
+            <div class="subject-card__icon">🔢</div>
+            <div class="subject-card__meta">
+              <div class="subject-card__badge">Математика</div>
+              <h2 class="subject-card__title">Математика по-русски</h2>
+              <div class="subject-card__ages">Возраст 6–16 лет · 1–9 класс</div>
+            </div>
+          </div>
+          <div class="subject-card__body">
+            <p class="subject-card__desc">Российская и советская традиция математического образования — одна из сильнейших в мире. Мы передаём эту традицию детям, живущим за рубежом.</p>
+            <ul class="subject-card__features">
+              <li class="subject-feature">Программа Моро, Петерсон, Занков (на выбор)</li>
+              <li class="subject-feature">Устный счёт и ментальная математика</li>
+              <li class="subject-feature">Логические и олимпиадные задачи</li>
+              <li class="subject-feature">Алгебра с 5-го класса</li>
+              <li class="subject-feature">Геометрия с 7-го класса</li>
+            </ul>
+            <div class="subject-card__footer">
+              <div class="subject-card__price">от €80/мес <span>· 2 урока в нед.</span></div>
+              <a href="contacts.html" class="btn btn--primary btn--sm">Записаться</a>
+            </div>
+          </div>
+        </article>
       </div>
-      <a href="contacts.html" class="btn btn--primary" style="white-space:nowrap;">Пробный урок →</a>
+
+      <div style="margin-top:2.5rem">
+        <h3 style="font-size:1.375rem;margin-bottom:1.5rem;font-weight:700">Учебный план — Математика</h3>
+        <div class="schedule-wrapper">
+          <table class="curriculum-table" aria-label="Учебный план по математике">
+            <thead>
+              <tr>
+                <th>Класс</th>
+                <th>Раздел</th>
+                <th>Темы</th>
+                <th>Результат</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1–2 класс</td>
+                <td>Арифметика</td>
+                <td>Счёт до 100, сложение и вычитание в пределах 100, задачи в 1–2 действия, геометрические фигуры</td>
+                <td>Уверенно считает устно и письменно</td>
+              </tr>
+              <tr>
+                <td>3–4 класс</td>
+                <td>Умножение, деление</td>
+                <td>Таблица умножения, деление с остатком, дроби, задачи в 3–4 действия, периметр и площадь</td>
+                <td>Решает задачи на 4 действия, знает дроби</td>
+              </tr>
+              <tr>
+                <td>5–6 класс</td>
+                <td>Дроби и пропорции</td>
+                <td>Обыкновенные и десятичные дроби, проценты, пропорции, отрицательные числа, координатная плоскость</td>
+                <td>Уверен в дробях и процентах</td>
+              </tr>
+              <tr>
+                <td>7–8 класс</td>
+                <td>Алгебра и геометрия</td>
+                <td>Линейные уравнения, квадратные уравнения, треугольники, параллелограммы, теорема Пифагора</td>
+                <td>Решает уравнения, знает геометрию</td>
+              </tr>
+              <tr>
+                <td>9 класс</td>
+                <td>Подготовка к ОГЭ</td>
+                <td>Функции, квадратный трёхчлен, тригонометрия, задачи на вероятность, ОГЭ-формат</td>
+                <td>Готов к сдаче ОГЭ по математике</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
+
+    <!-- КОМПЛЕКСНАЯ -->
+    <div id="course-combo" class="course-detail active">
+      <div style="margin-top:2rem">
+        <article class="subject-card subject-card--combo fade-in-up" id="combo">
+          <div class="subject-card__top"></div>
+          <div class="subject-card__header">
+            <div class="subject-card__icon">⭐</div>
+            <div class="subject-card__meta">
+              <div class="subject-card__badge">Популярный выбор</div>
+              <h2 class="subject-card__title">Комплексная программа</h2>
+              <div class="subject-card__ages">Оба предмета · 4 урока в неделю · Скидка 15%</div>
+            </div>
+          </div>
+          <div class="subject-card__body">
+            <p class="subject-card__desc">Русский язык + математика в одном пакете. Один куратор для всей семьи, согласованное расписание, единый отчёт раз в неделю. Самый популярный выбор семей в диаспоре.</p>
+            <ul class="subject-card__features">
+              <li class="subject-feature">2 урока русского + 2 урока математики в неделю</li>
+              <li class="subject-feature">Один куратор — единая точка контакта</li>
+              <li class="subject-feature">Скидка 15% по сравнению с раздельной записью</li>
+              <li class="subject-feature">Еженедельный сводный отчёт по двум предметам</li>
+              <li class="subject-feature">Группы подбираются согласованно по одному времени</li>
+            </ul>
+            <div class="subject-card__footer">
+              <div class="subject-card__price">€120/мес <span>· сэкономьте €24 в мес.</span></div>
+              <a href="contacts.html" class="btn btn--primary btn--sm">Записаться на пробный урок</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- MATH -->
-<section class="section" id="math">
+<!-- ========== МЕТОДОЛОГИЯ ========== -->
+<section class="section section--warm" id="methodology">
   <div class="container">
-    <div class="section__header fade-in">
-      <div class="section__label">Предмет 2</div>
-      <h2 class="section__title">Математика по-русски</h2>
-      <p class="section__subtitle">Российская школа математики — одна из лучших в мире. Ваш ребёнок будет впереди сверстников в любой стране.</p>
+    <div class="section__header fade-in-up">
+      <div class="section__label">Методология</div>
+      <h2 class="section__title">Как мы преподаём</h2>
+      <p class="section__subtitle">Наша методика — сочетание проверенной российской традиции и современных онлайн-форматов</p>
     </div>
-
-    <div class="benefits-grid fade-in">
-      <div class="benefit-card">
-        <div class="benefit-card__icon">🔢</div>
-        <h3 class="benefit-card__title">1–2 класс: Арифметика</h3>
-        <p class="benefit-card__text">Счёт до 100 и 1000, сложение и вычитание столбиком, таблица умножения. Устный счёт — в уме, без калькулятора. Задачи на время и расстояние.</p>
+    <div class="method-grid">
+      <div class="method-card fade-in-up">
+        <h4>👥 Малые группы 3–5 детей</h4>
+        <p>Каждый ребёнок получает внимание учителя. Учитель знает имя, уровень и прогресс каждого. Дети общаются со сверстниками — это живая языковая среда.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-card__icon">✖</div>
-        <h3 class="benefit-card__title">3–4 класс: Четыре действия</h3>
-        <p class="benefit-card__text">Умножение и деление многозначных чисел. Дроби, доли. Периметр и площадь. Задачи в два-три действия. Олимпиадные задачи начального уровня.</p>
+      <div class="method-card fade-in-up">
+        <h4>📋 Структурированная программа</h4>
+        <p>Каждый урок имеет чёткий план, связанный с учебником. Ребёнок знает, что будет на следующем занятии, родители видят прогресс по темам.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-card__icon">📐</div>
-        <h3 class="benefit-card__title">5–6 класс: Начало алгебры</h3>
-        <p class="benefit-card__text">Обыкновенные и десятичные дроби, проценты, пропорции. Основы геометрии: треугольник, окружность, теорема Пифагора. Переменные и уравнения.</p>
+      <div class="method-card fade-in-up">
+        <h4>🏠 Небольшое домашнее задание</h4>
+        <p>После каждого урока — небольшое задание на 15–20 минут. Не перегружаем: у ребёнка есть и своя школа. Учитель проверяет и даёт письменный отзыв.</p>
       </div>
-    </div>
-
-    <div class="notice mt-4 fade-in">
-      <strong>Советская методика:</strong> мы делаем упор на понимание, а не на алгоритм. Ребёнок знает, почему, а не только как. Это даёт гибкость в решении нестандартных задач — то, что ценят международные олимпиады.
+      <div class="method-card fade-in-up">
+        <h4>📊 Еженедельный отчёт</h4>
+        <p>Раз в неделю родители получают письмо: что изучали, как успевает ребёнок, что стоит повторить дома. Вы всегда знаете, что происходит.</p>
+      </div>
+      <div class="method-card fade-in-up">
+        <h4>🎯 Адаптация под уровень</h4>
+        <p>Перед зачислением проводим диагностику. Группы формируются строго по уровню — ни «скучно», ни «слишком сложно». Если уровень меняется — переводим в другую группу.</p>
+      </div>
+      <div class="method-card fade-in-up">
+        <h4>💬 Живое общение</h4>
+        <p>Уроки через видеосвязь (BigBlueButton) с интерактивной доской. Учитель видит детей, дети видят учителя и друг друга. Всё как в настоящей школе, только онлайн.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- COMBO -->
-<section class="section section--alt" id="combo">
+<!-- ========== FAQ ========== -->
+<section class="section section--white">
   <div class="container">
-    <div class="section__header fade-in">
-      <div class="section__label">Лучший выбор</div>
-      <h2 class="section__title">Комплексная программа</h2>
-      <p class="section__subtitle">Русский язык + математика. 4 урока в неделю, один куратор, скидка 15%.</p>
+    <div class="section__header fade-in-up">
+      <div class="section__label">Вопросы о программах</div>
+      <h2 class="section__title">Часто спрашивают</h2>
     </div>
-    <div style="max-width:720px;margin:0 auto;">
-      <div class="step fade-in">
-        <div class="step__num">ПН</div>
-        <div class="step__content">
-          <h3 class="step__title">Понедельник — Русский язык</h3>
-          <p class="step__text">Новая тема по грамматике, работа с текстом. Домашнее задание на среду.</p>
-        </div>
+    <div class="faq-list fade-in-up">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">По какой программе занимаетесь? <span class="faq-question__icon">+</span></button>
+        <div class="faq-answer">Мы работаем по официальной российской программе ФГОС и используем учебники, которые используются в российских школах: «Школа России» и «Перспектива» (русский язык), Моро и Петерсон (математика). По желанию родителей можем адаптировать программу.</div>
       </div>
-      <div class="step fade-in" style="margin-top:.75rem;">
-        <div class="step__num">СР</div>
-        <div class="step__content">
-          <h3 class="step__title">Среда — Математика</h3>
-          <p class="step__text">Новая тема или закрепление. Разбор домашних заданий. Олимпиадная задача.</p>
-        </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Что делать, если ребёнок не знает русский совсем? <span class="faq-question__icon">+</span></button>
+        <div class="faq-answer">У нас есть группы для детей-наследников (Heritage Russian), которые слышат русский дома, но не учились писать. Отдельные группы для «нулевого» уровня — с игровым методом и очень медленным темпом освоения письма.</div>
       </div>
-      <div class="step fade-in" style="margin-top:.75rem;">
-        <div class="step__num">ЧТ</div>
-        <div class="step__content">
-          <h3 class="step__title">Четверг — Русский язык</h3>
-          <p class="step__text">Диктант, изложение или сочинение. Проверка домашнего задания.</p>
-        </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Какова нагрузка на ребёнка? <span class="faq-question__icon">+</span></button>
+        <div class="faq-answer">2 урока в неделю по 45 минут (или 25–30 мин для малышей 6–7 лет) + домашнее задание 15–20 минут после каждого урока. Итого около 2,5–3 часа учёбы с нами в неделю. Мы специально не перегружаем — у детей есть своя школа.</div>
       </div>
-      <div class="step fade-in" style="margin-top:.75rem;">
-        <div class="step__num">СБ</div>
-        <div class="step__content">
-          <h3 class="step__title">Суббота — Математика</h3>
-          <p class="step__text">Контрольная работа или повторение. Новые задачи, подготовка к следующей неделе.</p>
-        </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Признают ли ваши занятия российские школы? <span class="faq-question__icon">+</span></button>
+        <div class="faq-answer">Мы не аккредитованная школа и не выдаём официальных аттестатов. Мы — дополнительное образование, которое помогает сохранить язык и знания. Если вам нужен аттестат РФ, мы можем помочь с подготовкой к экстернат-экзаменам.</div>
       </div>
-    </div>
-    <div class="text-center mt-4 fade-in">
-      <a href="contacts.html" class="btn btn--primary btn--lg">Записаться на комплексную программу</a>
-      <p style="margin-top:.75rem;font-size:.875rem;color:var(--color-text-light)">Пробный урок по каждому предмету — бесплатно</p>
     </div>
   </div>
 </section>
 
-<!-- ATTESTAT -->
-<section class="section" id="attestat">
-  <div class="container">
-    <div class="section__header fade-in">
-      <div class="section__label">Дополнительно</div>
-      <h2 class="section__title">Подготовка к аттестату РФ</h2>
-    </div>
-    <div style="max-width:720px;margin:0 auto;" class="fade-in">
-      <p style="color:var(--color-text-light);line-height:1.8;margin-bottom:1.5rem;">
-        Если ваша семья планирует вернуться в Россию, или ребёнок хочет поступить в российский вуз — мы готовим к аттестации по программе ФГОС. Это отдельная услуга, не включённая в базовые тарифы.
-      </p>
-      <div class="benefits-grid" style="grid-template-columns:1fr 1fr;">
-        <div class="benefit-card">
-          <div class="benefit-card__icon">📋</div>
-          <h3 class="benefit-card__title">Промежуточная аттестация</h3>
-          <p class="benefit-card__text">Переход из класса в класс. Ребёнок сдаёт аттестацию при посольской школе или через нашего партнёра в РФ.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-card__icon">🎓</div>
-          <h3 class="benefit-card__title">Итоговая аттестация</h3>
-          <p class="benefit-card__text">Подготовка к ОГЭ/ЕГЭ по русскому языку. Начинаем за 12–18 месяцев до экзамена.</p>
-        </div>
-      </div>
-      <a href="contacts.html" class="btn btn--outline mt-3">Узнать об аттестации →</a>
-    </div>
-  </div>
-</section>
-
+<!-- ========== CTA ========== -->
 <section class="cta-section">
   <div class="container">
-    <h2>Выберите программу</h2>
-    <p>Первый шаг — бесплатный пробный урок.<br>Учитель определит уровень и подберёт подходящую группу.</p>
-    <div class="btn-group">
-      <a href="contacts.html" class="btn btn--accent btn--lg">Записаться на пробный урок</a>
-      <a href="prices.html" class="btn btn--outline-white btn--lg">Посмотреть цены</a>
+    <h2 class="fade-in-up">Не уверены, что подходит?</h2>
+    <p class="fade-in-up">Запишитесь на бесплатный пробный урок — учитель сам оценит уровень ребёнка и порекомендует программу</p>
+    <div class="btn-group fade-in-up" style="justify-content:center">
+      <a href="contacts.html" class="btn btn--accent btn--lg">Пробный урок бесплатно</a>
+      <a href="prices.html" class="btn btn--outline-white">Посмотреть цены</a>
     </div>
   </div>
 </section>
+
 </main>
 
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <div class="footer__logo">
-          <div style="display:flex;align-items:center;gap:.625rem;">
-            <div class="logo__icon">АР</div>
-            <span style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:#fff;">Академия на русском</span>
-          </div>
-        </div>
-        <p class="footer__tagline">Школа на русском языке для детей русскоязычной диаспоры. Русский язык и математика, возраст 7–12 лет.</p>
+        <a href="index.html" class="footer__logo-link">
+          <div class="footer__logo-icon" aria-hidden="true">АР</div>
+          <div class="footer__logo-text">Академия на русском<span>Онлайн-школа для детей</span></div>
+        </a>
+        <p class="footer__tagline">Живые уроки русского языка и математики для детей 6–16 лет.</p>
+        <div class="footer__social"><a href="https://t.me/russchool_online" class="social-btn" aria-label="Telegram">TG</a><a href="https://wa.me/79000000000" class="social-btn" aria-label="WhatsApp">WA</a></div>
       </div>
-      <div>
-        <div class="footer__col-title">Школа</div>
-        <ul class="footer__links">
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="teachers.html">Учителя</a></li>
-          <li><a href="courses.html">Программы</a></li>
-          <li><a href="schedule.html">Расписание</a></li>
-          <li><a href="prices.html">Цены</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer__col-title">Программы</div>
-        <ul class="footer__links">
-          <li><a href="courses.html#russian">Русский язык</a></li>
-          <li><a href="courses.html#math">Математика</a></li>
-          <li><a href="courses.html#combo">Комплексная</a></li>
-          <li><a href="courses.html#attestat">Аттестат РФ</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer__col-title">Контакты</div>
-        <div class="footer__contacts">
-          <div class="footer__contact"><span>✈</span><a href="https://t.me/russchoolonline">@russchoolonline</a></div>
-          <div class="footer__contact"><span>@</span><a href="mailto:hello@russchool.online">hello@russchool.online</a></div>
-        </div>
-      </div>
+      <div><div class="footer__col-title">Школа</div><nav class="footer__links"><a href="courses.html">Программы</a><a href="teachers.html">Учителя</a><a href="schedule.html">Расписание</a><a href="prices.html">Цены</a><a href="about.html">О школе</a><a href="contacts.html">Контакты</a></nav></div>
+      <div><div class="footer__col-title">Предметы</div><div class="footer__links"><a href="#russian">Русский язык</a><a href="#math">Математика</a><a href="#combo">Комплексная</a></div></div>
+      <div><div class="footer__col-title">Контакты</div><div class="footer__contact-item"><span>✉</span><a href="mailto:hello@russchool.online">hello@russchool.online</a></div><div class="footer__contact-item"><span>📱</span><a href="https://t.me/russchool_online">@russchool_online</a></div></div>
     </div>
-    <div class="footer__bottom">
-      <span>© 2024–2026 Академия на русском</span>
-    </div>
+    <div class="footer__bottom"><div>© 2024–2025 Академия на русском</div><div><a href="#">Конфиденциальность</a></div></div>
   </div>
 </footer>
 
+<div class="mobile-cta-bar" id="mobileCta">
+  <a href="contacts.html" class="btn btn--accent">Записаться бесплатно</a>
+  <a href="https://t.me/russchool_online" class="btn btn--tg" target="_blank" rel="noopener">TG</a>
+</div>
+
 <script src="js/main.js"></script>
+<script>
+function showCourse(type, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+  btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+  if (type === 'all') {
+    document.getElementById('course-russian').classList.add('active');
+    document.getElementById('course-math').classList.add('active');
+    document.getElementById('course-combo').classList.add('active');
+  } else {
+    ['russian','math','combo'].forEach(id => {
+      const el = document.getElementById('course-' + id);
+      if (el) el.classList.toggle('active', id === type);
+    });
+  }
+}
+</script>
 </body>
 </html>
