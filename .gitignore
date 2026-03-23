@@ -3,3 +3,34 @@
 DejaVu*
 __pycache__/
 *.pyc
+
+# Temp scripts and debug files
+debug_*.py
+debug_*.php
+diag_*.php
+inspect_*.py
+measure_*.py
+find_*.py
+fix_logo_screenshots.py
+fix_login_css.py
+apply_final_css.py
+final_css_fix.py
+fix_loginform_width.py
+purge_and_screenshot.py
+visual_overhaul.py
+fix_logo_screenshots.py
+create_grades_2_4.php
+generate_pdf.py
+software-complex.html
+site/
+
+# Old screenshots (keep only screenshots/)
+*.png
+!screenshots/*.png
+
+# Temp PNG files
+additionalhtml_page.png
+frontpage_after.png
+frontpage_settings.png
+moove_frontpage_tab.png
+moove_settings.png
