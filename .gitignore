@@ -23,6 +23,7 @@ create_grades_2_4.php
 generate_pdf.py
 software-complex.html
 site/
+# ui-research tracked (contains reports)
 
 # Old screenshots (keep only screenshots/)
 *.png
