@@ -113,6 +113,11 @@ def test_student(page, user):
     page.goto(f"{BASE}/my/")
     page.wait_for_load_state('networkidle')
     check("Дашборд ученика загружается", "login" not in page.url)
+    content_my = page.content()
+    # Hero-баннер не должен показываться на /my/ (только на главной)
+    hero_visible = 'school-hero' in content_my and 'display: none' not in content_my
+    check("Hero-баннер скрыт на дашборде", not hero_visible,
+          "баннер виден — лишний" if hero_visible else "OK")
 
     # Мои курсы — ждём AJAX загрузку карточек
     page.goto(f"{BASE}/my/courses.php")
