@@ -1,0 +1,73 @@
+/* block_nextlesson — brand styles */
+
+.block_nextlesson .nextlesson-card {
+    background: #ffffff;
+    border-left: 4px solid #E87722;
+    border-radius: 8px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.10);
+    font-family: 'Inter', sans-serif;
+}
+
+.block_nextlesson .nextlesson-empty-card {
+    border-left-color: #b0bec5;
+}
+
+.block_nextlesson .nextlesson-course {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e3a5f;
+    margin-bottom: 4px;
+}
+
+.block_nextlesson .nextlesson-eventname {
+    font-size: 0.875rem;
+    color: #546e7a;
+    margin-bottom: 6px;
+}
+
+.block_nextlesson .nextlesson-time {
+    font-size: 0.9rem;
+    color: #37474f;
+    margin-bottom: 6px;
+}
+
+.block_nextlesson .nextlesson-enrolled {
+    font-size: 0.82rem;
+    color: #607d8b;
+    margin-bottom: 10px;
+}
+
+.block_nextlesson .nextlesson-empty {
+    color: #90a4ae;
+    font-size: 0.88rem;
+}
+
+.block_nextlesson .nextlesson-btn-wrap {
+    margin-top: 12px;
+}
+
+.block_nextlesson .nextlesson-btn {
+    display: inline-block;
+    background: #E87722;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background 0.2s;
+}
+
+.block_nextlesson .nextlesson-btn:hover {
+    background: #cf6414;
+}
+
+.block_nextlesson .nextlesson-btn-secondary {
+    background: #1e3a5f;
+}
+
+.block_nextlesson .nextlesson-btn-secondary:hover {
+    background: #15294a;
+}

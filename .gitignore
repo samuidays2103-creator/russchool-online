@@ -35,3 +35,18 @@ frontpage_after.png
 frontpage_settings.png
 moove_frontpage_tab.png
 moove_settings.png
+
+# Temp install/configure scripts from agents
+ui-research/install_*.py
+ui-research/enable_ws*.py
+ui-research/add_block*.py
+ui-research/add_default*.py
+ui-research/add_to_system*.py
+ui-research/configure_*.py
+ui-research/confirm_*.py
+ui-research/deploy_*.py
+ui-research/finalize_*.py
+ui-research/complete_*.py
+ui-research/quick_*.py
+ui-research/setup_*.py
+ui-research/sys_*.py
