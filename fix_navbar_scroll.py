@@ -1,7 +1,6 @@
 """
-apply_theme.py
-Apply full visual theme to Moodle: navbar logo, login page design, scroll fixes.
-Re-run this script to re-apply all CSS/HTML after cache purge or server reset.
+fix_navbar_scroll.py
+Fix navbar height and scroll overlap issues.
 """
 import sys, io, time, os
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
@@ -11,6 +10,7 @@ BASE = "http://130.12.47.10"
 os.makedirs("screenshots", exist_ok=True)
 LOGO_URL = "https://easydayssamui.com/images/logo.png"
 
+# Read current CSS from apply_theme.py and update the navbar section
 CSS = f"""<style>
 
 /* ═══════════════════════════════════════════
@@ -84,8 +84,6 @@ body.pagelayout-login .footer-popover-container {{
 body.pagelayout-login #school-login-header {{
     display: flex !important;
 }}
-
-/* Card layout */
 body.pagelayout-login .login-wrapper {{
     max-width: 460px !important;
     margin: 0 auto !important;
@@ -106,7 +104,6 @@ body.pagelayout-login .login-container::before {{
     margin: -36px -40px 32px;
     border-radius: 20px 20px 0 0;
 }}
-/* ✓ KEY FIX: loginform must be full-width */
 body.pagelayout-login .loginform {{
     width: 100% !important;
     max-width: 100% !important;
@@ -120,12 +117,9 @@ body.pagelayout-login .loginform .col {{
     width: 100% !important;
     padding: 0 !important;
 }}
-
-/* ✓ Hide Moodle h1.login-heading "Зайти на..." */
 body.pagelayout-login .login-heading {{
     display: none !important;
 }}
-/* Our heading — ::before on loginform (flex container, so flex item) */
 body.pagelayout-login .loginform::before {{
     content: 'Войдите в личный кабинет';
     display: block;
@@ -138,7 +132,6 @@ body.pagelayout-login .loginform::before {{
     line-height: 1.3;
     font-family: inherit;
 }}
-/* Inputs */
 body.pagelayout-login .form-control {{
     border-radius: 8px !important;
     border: 1.5px solid #dde1e7 !important;
@@ -150,7 +143,6 @@ body.pagelayout-login .form-control:focus {{
     border-color: #E87722 !important;
     box-shadow: 0 0 0 3px rgba(232,119,34,0.18) !important;
 }}
-/* Login button */
 body.pagelayout-login #loginbtn {{
     background: linear-gradient(135deg, #E87722 0%, #c45e10 100%) !important;
     border: none !important;
@@ -164,7 +156,6 @@ body.pagelayout-login #loginbtn {{
 }}
 body.pagelayout-login #loginbtn:hover {{ opacity: 0.88 !important; }}
 body.pagelayout-login a {{ color: #E87722 !important; }}
-/* Hide language selector & cookie notice */
 body.pagelayout-login .login-languagemenu,
 body.pagelayout-login .login-divider ~ .d-flex,
 body.pagelayout-login .lang-chooser-container {{
@@ -172,7 +163,7 @@ body.pagelayout-login .lang-chooser-container {{
 }}
 
 /* ═══════════════════════════════════════════
-   HERO / LOGIN HEADER visibility
+   HERO / LOGIN HEADER
 ═══════════════════════════════════════════ */
 #school-hero {{ display: none !important; }}
 #school-login-header {{ display: none !important; }}
@@ -241,7 +232,7 @@ TOPOFBODY = """<div id="school-hero" style="background:linear-gradient(135deg,#E
 <div style="color:rgba(255,255,255,0.8);font-size:0.92em;">Русский язык и математика для детей диаспоры</div>
 </div>"""
 
-print("Applying full visual theme...")
+print("Fixing navbar scroll overlap...")
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
     ctx = browser.new_context(viewport={"width": 1440, "height": 900})
@@ -266,7 +257,7 @@ with sync_playwright() as p:
     for sel in ['input[type=submit]', 'button[type=submit]']:
         try:
             btn = page.locator(sel).first
-            if btn.is_visible(timeout=3000):
+            if btn.is_visible(timeout=2000):
                 btn.click()
                 page.wait_for_load_state('networkidle')
                 print("✓ Caches purged")
@@ -274,8 +265,7 @@ with sync_playwright() as p:
         except:
             pass
 
-    time.sleep(3)
-    print("\nScreenshots...")
+    time.sleep(2)
 
     def shot(name, url, user=None, mobile=False, scroll_y=0):
         vp = {"width": 390, "height": 844} if mobile else {"width": 1440, "height": 900}
@@ -295,19 +285,19 @@ with sync_playwright() as p:
             if scroll_y:
                 pg.evaluate(f"window.scrollTo(0, {scroll_y})")
                 time.sleep(0.5)
-            pg.screenshot(path=f"screenshots/{name}.png", full_page=(scroll_y == 0))
+            pg.screenshot(path=f"screenshots/{name}.png")
             print(f"  ✓ {name}.png")
         except Exception as e:
-            print(f"  ✗ {name}: {type(e).__name__}")
+            print(f"  ✗ {name}: {type(e).__name__}: {e}")
         finally:
             c.close()
 
-    shot("login_desktop",   f"{BASE}/login/index.php")
-    shot("login_mobile",    f"{BASE}/login/index.php", mobile=True)
-    shot("frontpage_guest", BASE)
-    shot("dashboard",       f"{BASE}/my/",                  user=("ivanov_misha", "Test1234!"))
-    shot("course",          f"{BASE}/course/view.php?id=2", user=("ivanov_misha", "Test1234!"))
-    shot("navbar_scroll",   f"{BASE}/my/courses.php",       user=("ivanov_misha", "Test1234!"), scroll_y=300)
+    print("\nScreenshots:")
+    shot("navbar_scroll",  f"{BASE}/my/courses.php", user=("ivanov_misha","Test1234!"), scroll_y=200)
+    shot("navbar_top",     f"{BASE}/my/",            user=("ivanov_misha","Test1234!"))
+    shot("frontpage_top",  BASE)
+    shot("login_check",    f"{BASE}/login/index.php")
 
     browser.close()
-print("✓ Done!")
+
+print("\n✓ Done!")
