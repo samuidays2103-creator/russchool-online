@@ -1,0 +1,5 @@
+*.pdf
+*.ttf
+DejaVu*
+__pycache__/
+*.pyc
