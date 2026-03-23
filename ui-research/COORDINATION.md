@@ -6,6 +6,8 @@
 - [x] AGENT2: site/ редизайн завершён (Agent 2 пишет сюда)
 - [x] IMPL: Тема/дизайн реализован — сигнал для Agent 3
 - [x] AGENT3: Moodle CSS применён — UI Redesign v2 задеплоен (2026-03-24)
+- [x] PLUGIN: block_nextlesson установлен (2026-03-24)
+- [x] PLUGIN: Role-based dashboards настроены (2026-03-24)
 
 ## ⚠️ РАЗДЕЛЕНИЕ РАБОТЫ — НЕ ДУБЛИРОВАТЬ
 
