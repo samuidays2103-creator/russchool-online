@@ -829,6 +829,141 @@ body.notloggedin .courses.frontpage-course-list-all {
     padding: 10px 16px !important;
 }
 
+/* ═══ BUG-003: Скрыть пустую Шкалу времени, уменьшить Календарь ═══ */
+body.pagelayout-mydashboard .block_timeline {
+    max-height: 200px !important;
+    overflow: hidden !important;
+}
+body.pagelayout-mydashboard .block_calendar_month {
+    max-height: 350px !important;
+    overflow: hidden !important;
+}
+/* Если timeline пустой — скрыть через CSS (empty data region) */
+body.pagelayout-mydashboard .block_timeline [data-region="no-events-empty-message"] {
+    display: none !important;
+}
+
+/* ═══ BUG-006 re-opened: Футер Moodle — глобальный селектор ═══ */
+#page-footer,
+.footer-popover,
+footer .tool_dataprivacy,
+#page-footer .logininfo,
+.footer-content-debugging,
+#page-footer a[href*="moodle"],
+.footer-content .tool_usertours-resettourcontainer {
+    display: none !important;
+}
+
+/* ═══ BUG-010: BBB waiting page ═══ */
+body.path-mod-bigbluebuttonbn #region-main-box {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    min-height: 50vh !important;
+}
+body.path-mod-bigbluebuttonbn #region-main {
+    max-width: 650px !important;
+    margin: 40px auto !important;
+    background: linear-gradient(135deg, #f8fafc 0%, #e8f0fe 100%) !important;
+    border-radius: 20px !important;
+    padding: 48px 40px !important;
+    box-shadow: 0 8px 32px rgba(30,58,95,0.1) !important;
+    text-align: center !important;
+}
+body.path-mod-bigbluebuttonbn h2 {
+    color: #1e3a5f !important;
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 1.8em !important;
+}
+
+/* ═══ BUG-013 partial: Убрать артефакты на мобильной frontpage ═══ */
+body.notloggedin .course-section,
+body.notloggedin .courses,
+body.notloggedin .category-browse,
+body.notloggedin #region-main .box.py-3.generalbox,
+body.notloggedin .frontpage-course-list-enrolled {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ═══ BUG-016: Логотип — скрыть ВСЕ img внутри navbar-brand ═══ */
+.navbar-brand > img,
+.navbar-brand img {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+/* Увеличить наш CSS-логотип */
+.navbar-brand::before {
+    width: 40px !important;
+    height: 40px !important;
+    margin-right: 8px !important;
+}
+
+/* ═══ BUG-019: Карточки на /my/courses.php ═══ */
+body.path-my .card.course-card,
+body.pagelayout-mycourses .card.course-card,
+.courses-view-course-category .card,
+[data-region="courses-view"] .card {
+    border-radius: 16px !important;
+    border: 1px solid #E7E5E4 !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.06) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s !important;
+    overflow: hidden !important;
+}
+body.path-my .card.course-card:hover,
+body.pagelayout-mycourses .card.course-card:hover,
+[data-region="courses-view"] .card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 24px rgba(30,58,95,0.15) !important;
+    border-color: #E87722 !important;
+}
+
+/* ═══ BUG-020: Мобильные секции курса — gaps ═══ */
+@media (max-width: 768px) {
+    .course-content .course-section {
+        margin-bottom: 12px !important;
+        border: 1px solid #E7E5E4 !important;
+        border-radius: 12px !important;
+        padding: 8px !important;
+        background: white !important;
+    }
+    .course-content .course-section-header {
+        padding: 8px 12px !important;
+        background: #f0f4f8 !important;
+        border-radius: 8px 8px 0 0 !important;
+    }
+}
+
+/* ═══ BUG-009: Расширенные селекторы для assign ═══ */
+.path-mod-assign .generaltable,
+.path-mod-assign table.flexible {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+    border: 1px solid #E7E5E4 !important;
+}
+.path-mod-assign .generaltable th,
+.path-mod-assign table.flexible th {
+    background: #1e3a5f !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+}
+
+/* ═══ BUG-011: BBB alert — доп. селекторы ═══ */
+.path-mod-bigbluebuttonbn .alert,
+body.path-mod-bigbluebuttonbn .alert-warning {
+    border-radius: 12px !important;
+    border: 1px solid #E87722 !important;
+    background: #fff7ed !important;
+    color: #92400e !important;
+    font-size: 0.85em !important;
+    margin-bottom: 20px !important;
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
@@ -853,7 +988,7 @@ var path = window.location.pathname;
 var isDashboard = path === '/my/' || path === '/my/index.php';
 var isCourse = path.indexOf('/course/view.php') !== -1;
 var isTeacher = !!document.querySelector(
-  '.editing-mode-toggle-on, [data-action="toggle-editing"], .editing-mode-toggle'
+  '.editmode-switch-form, [data-action="toggle-editing"], .editing-mode-toggle-on, .editing-mode-toggle, input[name="setmode"]'
 );
 
 function getGreeting() {
