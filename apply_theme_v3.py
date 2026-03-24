@@ -706,6 +706,129 @@ body.editing .activity-item {
     color: #1e3a5f !important;
 }
 
+/* ═══ BUG-006: Скрыть футер "На платформе Moodle" ═══ */
+.moove-container-fluid,
+footer .moove-container-fluid,
+.moove-footer-content,
+#page-footer .logininfo,
+.footer-content-debugging,
+a[href="https://moodle.org"],
+footer a[href*="moodle.org"],
+.powered-by-moodle {
+    display: none !important;
+}
+
+/* ═══ BUG-015: Скрыть toggle темы в navbar ═══ */
+.darkmode-toggler,
+[data-action="toggle-darkmode"],
+.theme-dark-toggle,
+.custom-control.custom-switch,
+.navbar .custom-switch,
+input[name="darkmode-toggle"],
+.moove-darkmode-toggle {
+    display: none !important;
+}
+
+/* ═══ BUG-016: Логотип — скрыть стандартную иконку темы ═══ */
+.navbar-brand .logo,
+.navbar-brand img:not(.user-avatar) {
+    display: none !important;
+}
+/* Наш логотип через ::before уже задан выше — оставляем как есть */
+
+/* ═══ BUG-013: Скрыть категории курсов для гостя ═══ */
+body.notloggedin .coursebox,
+body.notloggedin #frontpage-course-list,
+body.notloggedin #frontpage-category-names,
+body.notloggedin #frontpage-category-combo,
+body.notloggedin .frontpage-course-list-all,
+body.notloggedin [data-block="course_list"],
+body.notloggedin .courses.frontpage-course-list-all {
+    display: none !important;
+}
+
+/* ═══ BUG-010: BBB страница ожидания — стилизация ═══ */
+.mod_bigbluebuttonbn .maincontent,
+#bigbluebuttonbn_view_message_box {
+    background: linear-gradient(135deg, #f8fafc 0%, #e8f0fe 100%) !important;
+    border-radius: 16px !important;
+    padding: 40px !important;
+    text-align: center !important;
+    max-width: 600px !important;
+    margin: 40px auto !important;
+    box-shadow: 0 4px 16px rgba(30,58,95,0.1) !important;
+}
+.mod_bigbluebuttonbn .maincontent::before,
+#bigbluebuttonbn_view_message_box::before {
+    content: '🎥';
+    display: block;
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+#bigbluebuttonbn_view_message_box span,
+.mod_bigbluebuttonbn .maincontent p {
+    font-size: 1.2em !important;
+    color: #1e3a5f !important;
+    font-weight: 600 !important;
+}
+
+/* ═══ BUG-011: BBB warning banner — стилизовать ═══ */
+.mod_bigbluebuttonbn .alert-warning,
+.mod_bigbluebuttonbn .alert-danger {
+    border-radius: 12px !important;
+    border: 1px solid #E87722 !important;
+    background: #fff7ed !important;
+    color: #92400e !important;
+    font-size: 0.85em !important;
+}
+
+/* ═══ BUG-009: Assign карточка "Состояние ответа" ═══ */
+.path-mod-assign .submissionstatustable,
+.path-mod-assign .submissionstatustable .generaltable {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+    border: 1px solid #E7E5E4 !important;
+}
+.path-mod-assign .submissionstatustable th {
+    background: #1e3a5f !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+}
+.path-mod-assign .submissionstatustable td {
+    padding: 10px 16px !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+.path-mod-assign .submissionstatustable .lastcol a,
+.path-mod-assign [data-action="grading"] {
+    background: #E87722 !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 6px 16px !important;
+    text-decoration: none !important;
+}
+
+/* ═══ BUG-014: Quiz попытки — стилизация ═══ */
+.path-mod-quiz .quizattemptsummary,
+.path-mod-quiz .generaltable {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+    border: 1px solid #E7E5E4 !important;
+}
+.path-mod-quiz .quizattemptsummary th,
+.path-mod-quiz .generaltable thead th {
+    background: #1e3a5f !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+}
+.path-mod-quiz .quizattemptsummary td,
+.path-mod-quiz .generaltable td {
+    padding: 10px 16px !important;
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
