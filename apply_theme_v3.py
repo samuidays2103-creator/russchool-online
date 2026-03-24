@@ -881,11 +881,22 @@ body.notloggedin .course-section,
 body.notloggedin .courses,
 body.notloggedin .category-browse,
 body.notloggedin #region-main .box.py-3.generalbox,
-body.notloggedin .frontpage-course-list-enrolled {
+body.notloggedin .frontpage-course-list-enrolled,
+body.notloggedin #region-main > div:not(.hero-section):not(#school-hero) {
     display: none !important;
     height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+body.notloggedin.pagelayout-frontpage #region-main,
+body.notloggedin.pagelayout-frontpage #region-main-box,
+body.notloggedin.pagelayout-frontpage #topofscroll,
+body.notloggedin.pagelayout-frontpage .main-inner,
+body.notloggedin.pagelayout-frontpage #page-content {
+    min-height: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    height: auto !important;
 }
 
 /* ═══ BUG-016: Логотип — скрыть ВСЕ img внутри navbar-brand ═══ */
@@ -1108,10 +1119,11 @@ if (isCourse) {
             var origText = link.textContent.trim();
             link.innerHTML = '🎥 ' + origText;
         }
-        // Badge "Живой урок"
+        // Badge "Живой урок" (один раз)
         var nameArea = item.querySelector('.activity-name-area, .activityname');
-        if (nameArea) {
+        if (nameArea && !nameArea.querySelector('.school-bbb-badge')) {
             var badge = document.createElement('span');
+            badge.className = 'school-bbb-badge';
             badge.style.cssText = 'background:#E87722;color:white;padding:3px 10px;border-radius:20px;font-size:0.75em;font-weight:700;margin-left:12px;vertical-align:middle;display:inline-block';
             badge.textContent = 'ЖИВОЙ УРОК';
             nameArea.appendChild(badge);
