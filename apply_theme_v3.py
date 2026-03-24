@@ -1132,7 +1132,7 @@ if (isCourse) {
                 '<a href="/user/index.php?id=' + courseId + '" class="school-quick-btn secondary">👥 Список учеников</a>' +
                 '<a href="/mod/assign/index.php?id=' + courseId + '" class="school-quick-btn secondary">📝 Задания</a>' +
                 '<a href="/report/participation/index.php?id=' + courseId + '" class="school-quick-btn secondary">📈 Активность</a>' +
-                '<a href="#" class="school-quick-btn primary" onclick="alert(\'Запустите занятие через BBB активность в разделе курса\');return false">🎥 Начать урок</a>';
+                '<a href="#" class="school-quick-btn primary" onclick="alert(&quot;Запустите занятие через BBB активность в разделе курса&quot;);return false">🎥 Начать урок</a>';
 
             courseContent.insertBefore(panel, courseContent.firstChild);
         }
