@@ -1009,18 +1009,39 @@ body.path-mod-bigbluebuttonbn .alert-warning {
 }
 
 /* ═══ BUG-004: XP виджет — скрыть английский текст, показать русский ═══ */
-.block_xp .xp-intro,
-.block_xp [data-region="xp-block-intro"],
-.block_xp .level-info .text-muted {
+.block_xp .introduction,
+.block_xp .block_xp-dismissable-notice,
+.block_xp .alert.alert-info {
     font-size: 0 !important;
     color: transparent !important;
+    line-height: 0 !important;
+    padding: 8px !important;
+    min-height: 0 !important;
 }
-.block_xp .xp-intro::after,
-.block_xp [data-region="xp-block-intro"]::after {
+.block_xp .introduction::after,
+.block_xp .block_xp-dismissable-notice::after,
+.block_xp .alert.alert-info::after {
     content: 'Участвуйте в курсе, чтобы получать очки опыта!' !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
     color: #57534E !important;
     display: block !important;
+    line-height: 1.4 !important;
+}
+/* Скрыть "Level up!" заголовок (на EN) */
+.block_xp .card-title:first-child {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+.block_xp .card-title:first-child::after {
+    content: 'Очки опыта' !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #1e3a5f !important;
+    display: block !important;
+    line-height: 1.4 !important;
+    height: auto !important;
 }
 
 /* ═══ BUG-016: Логотип — загрузить с сервера вместо внешнего URL ═══ */
@@ -1102,8 +1123,25 @@ var brand = document.querySelector('.navbar-brand');
 if (brand && brand.href && (brand.href.endsWith('/') || brand.href.includes('/?'))) {
     brand.href = '/my/';
 }
-// Кастомное навигационное меню
-if (!document.getElementById('school-nav-links')) {
+// Скрыть стандартные nav items (В начало, Дополнительно) — только для залогиненных
+if (!document.body.classList.contains('notloggedin')) {
+document.querySelectorAll('.primary-navigation .nav-item').forEach(function(item) {
+    var link = item.querySelector('a');
+    if (link) {
+        var text = link.textContent.trim();
+        if (text === 'В начало' || text === 'Дополнительно' || text === 'Home' || text === 'More') {
+            item.style.display = 'none';
+        }
+    }
+});
+// Также скрыть весь dropdownmoremenu
+document.querySelectorAll('.dropdownmoremenu, .moremenu').forEach(function(el) {
+    el.style.display = 'none';
+});
+} // end notloggedin check
+
+// Кастомное навигационное меню (только для залогиненных)
+if (!document.getElementById('school-nav-links') && !document.body.classList.contains('notloggedin')) {
     var navContainer = document.querySelector('.navbar .navbar-nav, .navbar');
     if (brand && brand.parentElement) {
         var navLinks = document.createElement('div');
