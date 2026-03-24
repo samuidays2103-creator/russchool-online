@@ -508,15 +508,21 @@ body.pagelayout-mydashboard [data-region="left-hand-drawer"] {
 
 /* ═══ V3: КАБИНЕТ УЧЕНИКА — dashboard layout ═══ */
 body.pagelayout-mydashboard #region-main {
-    display: grid !important;
-    grid-template-columns: 1fr 320px !important;
-    gap: 24px !important;
-    align-items: start !important;
+    display: block !important;
+    max-width: 100% !important;
+    width: 100% !important;
 }
-@media (max-width: 992px) {
-    body.pagelayout-mydashboard #region-main {
-        grid-template-columns: 1fr !important;
-    }
+/* Все блоки на dashboard — полная ширина */
+body.pagelayout-mydashboard #region-main > section,
+body.pagelayout-mydashboard #region-main > div,
+body.pagelayout-mydashboard #region-main > .block,
+body.pagelayout-mydashboard .block_myoverview,
+body.pagelayout-mydashboard .block_timeline,
+body.pagelayout-mydashboard .block_calendar_month {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 /* ═══ V3: BBB АКТИВНОСТЬ — большая кнопка "Войти в класс" ═══ */
