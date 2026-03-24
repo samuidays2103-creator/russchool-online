@@ -137,22 +137,18 @@ body {
 /* ═══════════════════════════════════════════
    КАРТОЧКИ КУРСОВ — dashboard /my/ и /my/courses.php
 ═══════════════════════════════════════════ */
-.block_myoverview .card.course-card,
-.card-grid .card.course-card,
-[data-region="course-content"] .card {
-    border-radius: var(--radius-lg) !important;
-    border: 1px solid var(--color-border) !important;
-    box-shadow: var(--shadow-sm) !important;
+.card.course-card {
+    border-radius: 16px !important;
+    border: 1px solid #E7E5E4 !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.06) !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s !important;
     overflow: hidden !important;
-    background: var(--color-bg-card) !important;
+    background: #FFFFFF !important;
 }
-.block_myoverview .card.course-card:hover,
-.card-grid .card.course-card:hover,
-[data-region="course-content"] .card:hover {
+.card.course-card:hover {
     transform: translateY(-4px) !important;
-    box-shadow: var(--shadow-hover) !important;
-    border-color: var(--color-accent) !important;
+    box-shadow: 0 8px 24px rgba(30,58,95,0.15) !important;
+    border-color: #E87722 !important;
 }
 .card.course-card .card-img-top {
     height: 130px !important;
@@ -759,6 +755,17 @@ function getUserName() {
         }
     }
     return '';
+}
+
+// ═══ CLOSE LEFT DRAWER ON DASHBOARD ═══
+if (isDashboard) {
+    document.body.classList.remove('drawer-open-index');
+    var leftDrawer = document.querySelector('.drawer-left, [data-region="left-hand-drawer"]');
+    if (leftDrawer) { leftDrawer.style.display = 'none'; leftDrawer.style.width = '0'; }
+    var pageEl = document.getElementById('page');
+    if (pageEl) { pageEl.style.setProperty('--drawer-width', '0px', 'important'); }
+    var mainInner = document.querySelector('.main-inner');
+    if (mainInner) { mainInner.style.marginLeft = '0'; mainInner.style.maxWidth = '100%'; }
 }
 
 // ═══ DASHBOARD ═══
