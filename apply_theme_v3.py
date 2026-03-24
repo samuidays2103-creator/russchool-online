@@ -99,6 +99,33 @@ body {
     width: auto !important;
     display: inline-block !important;
 }
+/* Скрыть "В начало" из primary nav */
+.primary-navigation .nav-link[href="/"],
+.primary-navigation a[href="/?redirect=0"] {
+    display: none !important;
+}
+/* Наша кастомная nav-панель (создаётся JS в footer) */
+#school-nav-links {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    margin-left: 16px !important;
+}
+#school-nav-links a {
+    color: rgba(255,255,255,0.88) !important;
+    padding: 6px 14px !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    border-radius: 6px !important;
+    transition: all 0.15s !important;
+    white-space: nowrap !important;
+}
+#school-nav-links a:hover {
+    color: #E87722 !important;
+    background: rgba(255,255,255,0.1) !important;
+}
+
 /* Ссылки в navbar */
 .navbar .nav-link,
 #usernavigation .nav-link,
@@ -1069,6 +1096,22 @@ BOTTOMOFPAGE = """<script>
 
 var path = window.location.pathname;
 var isDashboard = path === '/my/' || path === '/my/index.php';
+
+// Логотип → /my/ вместо /
+var brand = document.querySelector('.navbar-brand');
+if (brand && brand.href && (brand.href.endsWith('/') || brand.href.includes('/?'))) {
+    brand.href = '/my/';
+}
+// Кастомное навигационное меню
+if (!document.getElementById('school-nav-links')) {
+    var navContainer = document.querySelector('.navbar .navbar-nav, .navbar');
+    if (brand && brand.parentElement) {
+        var navLinks = document.createElement('div');
+        navLinks.id = 'school-nav-links';
+        navLinks.innerHTML = '<a href="/my/">Личный кабинет</a><a href="/my/courses.php">Мои курсы</a><a href="/calendar/view.php">Расписание</a><a href="/grade/report/overview/index.php">Оценки</a>';
+        brand.parentElement.insertBefore(navLinks, brand.nextSibling);
+    }
+}
 var isCourse = path.indexOf('/course/view.php') !== -1;
 var isTeacher = !!document.querySelector(
   '.editmode-switch-form, [data-action="toggle-editing"], .editing-mode-toggle-on, .editing-mode-toggle, input[name="setmode"]'
