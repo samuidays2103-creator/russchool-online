@@ -975,6 +975,72 @@ body.path-mod-bigbluebuttonbn .alert-warning {
     margin-bottom: 20px !important;
 }
 
+/* ═══ BUG-004: XP виджет — скрыть английский текст, показать русский ═══ */
+.block_xp .xp-intro,
+.block_xp [data-region="xp-block-intro"],
+.block_xp .level-info .text-muted {
+    font-size: 0 !important;
+    color: transparent !important;
+}
+.block_xp .xp-intro::after,
+.block_xp [data-region="xp-block-intro"]::after {
+    content: 'Участвуйте в курсе, чтобы получать очки опыта!' !important;
+    font-size: 14px !important;
+    color: #57534E !important;
+    display: block !important;
+}
+
+/* ═══ BUG-016: Логотип — загрузить с сервера вместо внешнего URL ═══ */
+.navbar-brand::before {
+    background-image: url('/pix/school-logo.png') !important;
+}
+
+/* ═══ BUG-021: Mobile приветствие responsive ═══ */
+@media (max-width: 480px) {
+    #school-dashboard-header {
+        padding: 16px !important;
+        flex-direction: column !important;
+    }
+    #school-dashboard-header h2 {
+        font-size: 1.2em !important;
+    }
+    #school-dashboard-header p {
+        font-size: 0.85em !important;
+    }
+    #school-dashboard-header .school-badge {
+        margin-top: 8px !important;
+        align-self: flex-start !important;
+    }
+}
+
+/* ═══ BUG-009+014: Все таблицы Moodle на страницах активностей ═══ */
+.path-mod table.generaltable,
+.path-mod table.flexible,
+.path-mod .submissionstatustable {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+    border: 1px solid #E7E5E4 !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+}
+.path-mod table.generaltable th,
+.path-mod table.flexible th,
+.path-mod .submissionstatustable th {
+    background: #1e3a5f !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+    border: none !important;
+}
+.path-mod table.generaltable td,
+.path-mod table.flexible td,
+.path-mod .submissionstatustable td {
+    padding: 10px 16px !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    border-top: none !important;
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
