@@ -492,6 +492,24 @@ li:has(a[href*="categoryid=2"]) { display: none !important; }
 a { color: var(--color-primary) !important; }
 a:hover { color: var(--color-accent) !important; }
 
+/* ═══ V3: СКРЫТЬ ПУСТОЙ LEFT DRAWER на dashboard ═══ */
+body.pagelayout-mydashboard #page.drawers {
+    --drawer-width: 0px !important;
+}
+body.pagelayout-mydashboard.drawer-open-index .main-inner,
+body.pagelayout-mydashboard .main-inner {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+}
+body.limitedwidth.pagelayout-mydashboard .main-inner {
+    max-width: 100% !important;
+}
+body.pagelayout-mydashboard .drawer.drawer-left,
+body.pagelayout-mydashboard [data-region="left-hand-drawer"] {
+    display: none !important;
+    width: 0 !important;
+}
+
 /* ═══ V3: КАБИНЕТ УЧЕНИКА — dashboard layout ═══ */
 body.pagelayout-mydashboard #region-main {
     display: grid !important;
