@@ -1407,6 +1407,30 @@ body.notloggedin .primary-navigation {
     }
 }
 
+/* ═══ Drawer — верхняя граница совпадает с navbar (56+3=59px) ═══ */
+.drawer, #theme_moove-drawers-courseindex {
+    top: 59px !important;
+    border-right: none !important;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05) !important;
+}
+
+/* ═══ BBB записи — responsive таблица ═══ */
+.bbb-recordings-table,
+.mod_bigbluebuttonbn table {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    display: block !important;
+    font-size: 14px !important;
+}
+
+/* ═══ Drawer правый край — убрать двойную линию ═══ */
+.drawer {
+    border-right: none !important;
+}
+#page-content {
+    border-left: none !important;
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
