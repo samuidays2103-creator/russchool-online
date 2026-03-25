@@ -1495,8 +1495,10 @@ var isDashboard = path === '/my/' || path === '/my/index.php';
 
 // Логотип → /my/ вместо /
 var brand = document.querySelector('.navbar-brand');
-if (brand && brand.href && (brand.href.endsWith('/') || brand.href.includes('/?'))) {
+// Лого → /my/ (dashboard), дубль с "Мои предметы" = ОК, лого это shortcut
+if (brand) {
     brand.href = '/my/';
+    brand.title = 'На главную';
 }
 // Скрыть стандартные nav items (В начало, Дополнительно) — только для залогиненных
 if (!document.body.classList.contains('notloggedin')) {
