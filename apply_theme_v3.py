@@ -1217,6 +1217,21 @@ body.pagelayout-login .login-form-forgotpassword::after {
     color: #1e3a5f !important;
 }
 
+/* Скрыть "Легенда событий" popup и ненужные элементы календаря */
+.calendarwrapper .calendar-controls .btn[data-action="filter-events"],
+[data-region="calendar-filter"],
+.calendar_filters,
+.calendar-legend,
+.calendarwrapper .btn-group,
+.calendar_event_course .calendar-circle {
+    display: none !important;
+}
+/* Скрыть "Новое событие" для студента */
+body:not(.role-admin) .calendarwrapper .btn[data-action="new-event"],
+.calendar-controls .btn-primary[data-action="new-event"] {
+    display: none !important;
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
