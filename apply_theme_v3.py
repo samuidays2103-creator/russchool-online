@@ -660,6 +660,15 @@ body.editing .activity-item {
     padding: 12px 20px;
     text-align: center;
     min-width: 160px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: opacity 0.2s !important;
+}
+#school-dashboard-header .next-lesson-badge:hover {
+    opacity: 0.9 !important;
 }
 #school-dashboard-header .next-lesson-badge .time {
     font-size: 1.3em;
@@ -1320,9 +1329,10 @@ if (isDashboard) {
                 '<h2>' + greeting + (name ? (', ' + name) : '') + '!</h2>' +
                 '<p>Программа «Школа России» · Начальная школа · 1–4 класс</p>' +
                 '</div>' +
-                '<div class="next-lesson-badge">' +
-                '<a href="/calendar/view.php" style="color:white;text-decoration:none"><span class="time">Скоро урок</span>' +
-                '<span class="label">Смотреть расписание</span></a>' +
+                '<a href="/calendar/view.php" class="next-lesson-badge" style="text-decoration:none;color:white">' +
+                '<span class="time">Скоро урок</span>' +
+                '<span class="label">Смотреть расписание</span>' +
+                '</a>' +
                 '</div>';
             mainContent.insertBefore(header, firstChild);
         }
