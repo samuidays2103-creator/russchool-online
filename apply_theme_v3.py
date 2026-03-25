@@ -1272,18 +1272,9 @@ body.path-mod-bigbluebuttonbn .alert-warning {
     background: rgba(255,255,255,0.1) !important;
 }
 
-/* ═══ BUG-025: Drawer — push content, not overlay ═══ */
+/* ═══ BUG-025: Drawer — не менять position, только z-index ═══ */
 .drawer {
     z-index: 1029 !important;
-    position: relative !important;
-}
-.drawer-left {
-    position: relative !important;
-    float: left !important;
-}
-/* Когда drawer открыт — контент двигается */
-body.drawer-open-index .main-inner {
-    transition: margin-left 0.3s !important;
 }
 
 /* ═══ BUG-030: Профиль студента ═══ */
