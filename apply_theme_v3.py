@@ -1211,14 +1211,14 @@ body.pagelayout-login .login-form-forgotpassword::after {
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
 TOPOFBODY = """<div id="school-hero" style="background:linear-gradient(135deg,#E87722 0%,#c45e10 100%);color:white;text-align:center;padding:48px 20px 40px;margin-bottom:0;">
 <p style="font-size:0.95em;opacity:0.85;letter-spacing:2px;text-transform:uppercase;margin:0 0 10px;">Онлайн-школа</p>
-<h1 style="font-size:2.4em;margin:0 0 16px;font-weight:700;line-height:1.2;">Русский язык и математика<br>для детей диаспоры</h1>
+<h1 style="font-size:2.4em;margin:0 0 16px;font-weight:700;line-height:1.2;">Начальная школа<br>для детей за рубежом</h1>
 <p style="font-size:1.1em;opacity:0.9;max-width:520px;margin:0 auto 28px;">Программа «Школа России», 1–4 класс. Группы 3–5 человек.</p>
 <a href="/my/" style="background:white;color:#E87722;font-weight:700;padding:14px 36px;border-radius:8px;text-decoration:none;font-size:1.1em;display:inline-block;">Войти в личный кабинет</a>
 </div>
 <div id="school-login-header" style="flex-direction:column;align-items:center;padding:44px 20px 28px;color:white;text-align:center;">
 <img src="/pix/school-logo.png" style="max-height:62px;width:auto;margin-bottom:14px;filter:brightness(0) invert(1);" alt="Онлайн-школа" onerror="this.style.display='none'">
 <div style="color:white;font-size:1.8em;margin:0 0 8px;font-weight:700;line-height:1.2;">Онлайн-школа</div>
-<div style="color:rgba(255,255,255,0.8);font-size:0.92em;">Русский язык и математика для детей диаспоры</div>
+<div style="color:rgba(255,255,255,0.8);font-size:0.92em;">Начальная школа · 1–4 класс</div>
 </div>"""
 
 # ─── BOTTOMOFPAGE: JavaScript DOM manipulation ────────────────────────────────
@@ -1316,11 +1316,11 @@ if (isDashboard) {
             header.innerHTML =
                 '<div>' +
                 '<h2>' + greeting + (name ? (', ' + name) : '') + '!</h2>' +
-                '<p>Программа «Школа России» · Русский язык и математика</p>' +
+                '<p>Программа «Школа России» · Начальная школа · 1–4 класс</p>' +
                 '</div>' +
                 '<div class="next-lesson-badge">' +
-                '<span class="time">Скоро урок</span>' +
-                '<span class="label">Расписание в курсе</span>' +
+                '<a href="/calendar/view.php" style="color:white;text-decoration:none"><span class="time">Скоро урок</span>' +
+                '<span class="label">Смотреть расписание</span></a>' +
                 '</div>';
             mainContent.insertBefore(header, firstChild);
         }
@@ -1402,7 +1402,7 @@ if (isCourse) {
                 '<a href="/user/index.php?id=' + courseId + '" class="school-quick-btn secondary">👥 Список учеников</a>' +
                 '<a href="/mod/assign/index.php?id=' + courseId + '" class="school-quick-btn secondary">📝 Задания</a>' +
                 '<a href="/report/participation/index.php?id=' + courseId + '" class="school-quick-btn secondary">📈 Активность</a>' +
-                '<a href="#" class="school-quick-btn primary" onclick="alert(&quot;Запустите занятие через BBB активность в разделе курса&quot;);return false">🎥 Начать урок</a>';
+                '<a href="#" class="school-quick-btn primary" onclick="alert(&quot;Нажмите на Онлайн-урок в списке тем&quot;);return false">🎥 Начать урок</a>';
 
             courseContent.insertBefore(panel, courseContent.firstChild);
         }
