@@ -1470,6 +1470,37 @@ body, html, #page, #page-wrapper, #page-content, #topofscroll, .main-inner {
     border-left: none !important;
 }
 
+/* ═══ BUG-056: Скрыть пустую таблицу записей BBB ═══ */
+.mod_bigbluebuttonbn .bbb-recordings-table:empty,
+.mod_bigbluebuttonbn table:has(td:only-child),
+.path-mod-bigbluebuttonbn .yui3-datatable,
+.path-mod-bigbluebuttonbn .bbb_recordings_table {
+    display: none !important;
+}
+/* Скрыть пагинацию записей если нет данных */
+.path-mod-bigbluebuttonbn .pagination,
+.path-mod-bigbluebuttonbn nav[aria-label="pagination"] {
+    display: none !important;
+}
+
+/* ═══ BUG-057: BBB навигация — компактно ═══ */
+.path-mod-bigbluebuttonbn .activity-navigation,
+.path-mod-bigbluebuttonbn [data-region="activity-navigation"] {
+    max-width: 400px !important;
+    margin: 16px auto !important;
+}
+
+/* ═══ BUG-043: Mobile navbar — "Мои предметы" не "Мои уроки" ═══ */
+@media (max-width: 768px) {
+    .moove-custom-nav .nav-link[href*="courses"] {
+        font-size: 0 !important;
+    }
+    .moove-custom-nav .nav-link[href*="courses"]::after {
+        content: 'Мои предметы' !important;
+        font-size: 14px !important;
+    }
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
@@ -1705,10 +1736,25 @@ document.querySelectorAll('*').forEach(function(el) {
     if (el.children.length === 0 && el.textContent) {
         var t = el.textContent;
         if (t.includes('элемент курса')) el.textContent = t.replace(/элемент курса/g, 'задание');
+        if (t.includes('Следующий задание')) el.textContent = t.replace('Следующий задание', 'Следующее задание');
         if (t.includes('Обзор курсов')) el.textContent = t.replace(/Обзор курсов/g, 'Обзор предметов');
         if (t.includes('No data to display')) el.textContent = t.replace('No data to display', 'Нет записей');
+        if (t.includes('No data')) el.textContent = t.replace('No data', 'Нет данных');
     }
 });
+
+// Повторить замену через 2 сек (Moodle рендерит AJAX после load)
+setTimeout(function() {
+    document.querySelectorAll('*').forEach(function(el) {
+        if (el.children.length === 0 && el.textContent) {
+            var t = el.textContent;
+            if (t.includes('элемент курса')) el.textContent = t.replace(/элемент курса/g, 'задание');
+            if (t.includes('Следующий задание')) el.textContent = t.replace('Следующий задание', 'Следующее задание');
+            if (t.includes('No data')) el.textContent = t.replace('No data', 'Нет данных');
+            if (t.includes('Обзор курсов')) el.textContent = t.replace(/Обзор курсов/g, 'Обзор предметов');
+        }
+    });
+}, 2000);
 
 // ═══ ОБЩИЕ УЛУЧШЕНИЯ ═══
 // Кнопка scroll-to-top
