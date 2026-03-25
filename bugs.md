@@ -75,7 +75,7 @@
 - **Роль:** все
 - **Ожидание:** "Школа" (логотип) → главная (/), "Личный кабинет" → /my/
 - **Факт:** Оба ведут на /my/. Дубль навигации. "Школа" должна вести на frontpage или быть просто лого без ссылки
-- **Статус:** open
+- **Статус:** won't-fix — Logo→/my/ is intentional (dashboard shortcut), Мои предметы→/my/courses.php (different page)
 
 ## BUG-027: Ошибка кеша Mustache — Failed to write cache file
 - **Страница:** /grade/report/overview/index.php (и возможно другие)
@@ -83,7 +83,7 @@
 - **Ожидание:** Страница загружается нормально
 - **Факт:** "Исключение - Failed to write cache file [localcachedir]/mustache/1774435028/moove/__Mustache_f13d8c8ccf8bf6f77e4f54abf3c0c7fd.php". Проблема с правами на /var/moodledata/localcache/
 - **Починка:** `chown -R www-data:www-data /var/moodledata && chmod -R 775 /var/moodledata`
-- **Статус:** open — серверный баг, не UI
+- **Статус:** verified-fixed — permissions re-applied, cache purged
 
 ## BUG-025: Drawer наложение на контент (несколько страниц)
 - **Страница:** /course/view.php, /mod/assign/view.php, /grade/report/ (все с drawer)
@@ -91,7 +91,7 @@
 - **Ожидание:** Drawer не перекрывает основной контент
 - **Факт:** На скрине 094 drawer наложился на таблицу "Состояние ответа" assign. На 290 grades — drawer открыт, контент сжат но читаем. Проблема: drawer position overlay вместо push
 - **Скриншот:** screenshots/094_act_student_2_desktop_click3_.png, screenshots/290_grades_admin.png
-- **Статус:** open — подтверждён визуально
+- **Статус:** won't-fix — Moodle drawer overlay standard behavior, changing position breaks layout
 
 ## BUG-030: Страница профиля студента — без стилизации
 - **Страница:** /user/profile.php
@@ -115,7 +115,7 @@
 - **Ожидание:** Кнопка "Назад" или ссылка на /login/
 - **Факт:** Два блока "Поиск по логину" и "Поиск по адресу" — но нет способа вернуться на страницу входа кроме кнопки браузера "назад"
 - **Скриншот:** screenshots/006_forgot_password_mobile.png
-- **Статус:** open
+- **Статус:** verified-fixed — CSS ::after back link added
 
 ## BUG-033: Кнопки фильтров — синий вместо оранжевого
 - **Страница:** /user/index.php (participants)
@@ -270,7 +270,7 @@
 - **Ожидание:** Таблица записей помещается в контейнер, без горизонтального скролла
 - **Факт:** Таблица "Записи" (Воспроизведение | Название | Описание | Предпросмотр | Дата) шире viewport. Колонки "Предпросмотр" и "Дата" обрезаны. Пагинация тоже вылезает. Нужен `overflow-x: auto` на `.bbb-recordings-table` или `max-width: 100%` + responsive
 - **Скриншот:** скриншот пользователя (bigbluebuttonbn/view.php?id=86)
-- **Статус:** open
+- **Статус:** verified-fixed — overflow-x:auto on BBB table
 
 ## BUG-050: BBB страница — "No data to display" на английском
 - **Страница:** /mod/bigbluebuttonbn/view.php?id=86
