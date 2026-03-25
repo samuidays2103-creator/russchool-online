@@ -108,10 +108,17 @@ body {
     width: auto !important;
     display: inline-block !important;
 }
-/* Скрыть "В начало" и дубли из primary nav */
-.primary-navigation .nav-link[href="/"],
-.primary-navigation a[href="/?redirect=0"] {
-    display: none !important;
+/* Скрыть ВСЬЮ primary navigation Moodle — наш JS navbar её заменяет */
+.primary-navigation {
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-height: 0 !important;
+    position: absolute !important;
+    width: 0 !important;
+    opacity: 0 !important;
 }
 /* Скрыть popover "Мои предметы" ссылку (дублирует наш nav) */
 .popover-region-container .see-all-link[href*="courses"],
