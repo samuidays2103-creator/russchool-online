@@ -1015,7 +1015,7 @@ body.path-mod-bigbluebuttonbn .alert-warning {
 }
 /* Показать русский текст ОДИН РАЗ через card-body ::after */
 .block_xp .card-body::after {
-    content: 'Участвуйте в курсе, чтобы получать очки опыта!' !important;
+    content: 'Выполняйте задания и получайте очки опыта!' !important;
     font-size: 13px !important;
     color: #57534E !important;
     display: block !important;
