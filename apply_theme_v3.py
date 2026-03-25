@@ -260,14 +260,32 @@ body {
     margin: 12px 16px !important;
     border-radius: 8px !important;
 }
-/* Скрыть пустые activity-header (серые блоки) */
-.activity-header:empty,
-[data-for="page-activity-header"]:empty,
-.course-section .activity-header:not(:has(*)) {
+/* Скрыть пустые блоки в секциях */
+.activity-header,
+[data-for="page-activity-header"],
+.course-section .activity-header {
     display: none !important;
     height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
+}
+/* Убрать синюю рамку на активной секции в sidebar */
+#courseindex .courseindex-item.active,
+#courseindex .courseindex-section.active,
+.courseindex [aria-current="true"],
+.courseindex .active {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: rgba(232,119,34,0.1) !important;
+    border-left: 3px solid #E87722 !important;
+}
+/* Course index sidebar links — убрать focus ring */
+#courseindex a:focus,
+#courseindex button:focus,
+.courseindex a:focus {
+    outline: none !important;
+    box-shadow: none !important;
 }
 .activity-item {
     border-bottom: 1px solid #f0f0f0 !important;
