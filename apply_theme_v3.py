@@ -1331,20 +1331,20 @@ if (isDashboard) {
     if (myoverview) {
         var sidebar = document.createElement('div');
         sidebar.id = 'school-sidebar';
-        sidebar.innerHTML =
-            '<h3>Ближайшие уроки</h3>' +
-            '<div class="school-lesson-item">' +
-            '<div class="school-lesson-dot"></div>' +
-            '<div class="school-lesson-info"><div class="subject">Русский язык</div><div class="time-str">Пн, Ср, Пт · 16:00 MSK</div></div>' +
-            '</div>' +
-            '<div class="school-lesson-item">' +
-            '<div class="school-lesson-dot upcoming"></div>' +
-            '<div class="school-lesson-info"><div class="subject">Математика</div><div class="time-str">Вт, Чт · 15:00 MSK</div></div>' +
-            '</div>' +
-            '<div class="school-lesson-item">' +
-            '<div class="school-lesson-dot done"></div>' +
-            '<div class="school-lesson-info"><div class="subject">Окружающий мир</div><div class="time-str">Пт · 14:00 MSK</div></div>' +
-            '</div>';
+        // Берём реальные события из блока "Предстоящие события"
+        var events = document.querySelectorAll('.block_calendar_upcoming .event, [data-region="event-list-content-events"] [data-type="event"]');
+        var lessonsHTML = '<h3>Ближайшие уроки</h3>';
+        if (events.length > 0) {
+            events.forEach(function(ev, i) {
+                if (i >= 5) return;
+                var name = ev.querySelector('.name, a')?.textContent?.trim() || '';
+                var timeEl = ev.querySelector('.date, small, .col-11')?.textContent?.trim() || '';
+                lessonsHTML += '<div class="school-lesson-item"><div class="school-lesson-dot' + (i === 0 ? '' : ' upcoming') + '"></div><div class="school-lesson-info"><div class="subject">' + name + '</div><div class="time-str">' + timeEl + '</div></div></div>';
+            });
+        } else {
+            lessonsHTML += '<p style="color:#57534E;font-size:0.9em">Расписание в <a href="/calendar/view.php" style="color:#E87722">календаре</a></p>';
+        }
+        sidebar.innerHTML = lessonsHTML;
 
         // Ссылки на курсы из карточек
         var courseCards = document.querySelectorAll('.card.course-card .coursename.aalink, .card.course-card .card-title a, .aalink.coursename');
