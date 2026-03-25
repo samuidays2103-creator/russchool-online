@@ -1407,6 +1407,27 @@ body.notloggedin .primary-navigation {
     }
 }
 
+/* ═══ BUG-053 КРИТИЧЕСКИЙ: Скролл должен работать ВСЕГДА ═══ */
+body, html, #page, #page-wrapper, #page-content, #topofscroll, .main-inner {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    max-height: none !important;
+}
+
+/* ═══ BUG-052: Drawer — убрать chevrons, CAPS, обрезку ═══ */
+.courseindex .courseindex-section-title .collapsed-icon,
+.courseindex .courseindex-section-title .expanded-icon,
+.courseindex .courseindex-chevron {
+    display: none !important;
+}
+.courseindex .courseindex-section-title,
+.courseindex .courseindex-item-content a {
+    text-transform: none !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
 /* ═══ Drawer — верхняя граница совпадает с navbar (56+3=59px) ═══ */
 .drawer, #theme_moove-drawers-courseindex {
     top: 59px !important;
