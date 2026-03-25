@@ -706,7 +706,25 @@ li.activity.bigbluebuttonbn {
     margin: 16px 0 !important;
     border: none !important;
 }
-.modtype_bigbluebuttonbn .activity-name-area a,
+/* BUG-054: Вся BBB карточка кликабельна */
+.modtype_bigbluebuttonbn .activity-item {
+    cursor: pointer !important;
+    position: relative !important;
+}
+.modtype_bigbluebuttonbn .activity-name-area a {
+    color: white !important;
+    font-size: 1.2em !important;
+    font-weight: 700 !important;
+    font-family: 'Nunito', sans-serif !important;
+}
+.modtype_bigbluebuttonbn .activity-name-area a::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
 li.activity.bigbluebuttonbn .instancename {
     color: white !important;
     font-size: 1.2em !important;
