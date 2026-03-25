@@ -246,12 +246,41 @@ body {
     font-size: 17px !important;
     margin: 0 !important;
 }
+/* Описание секции — красивая карточка */
+.course-content .section-summary,
+.course-content .course-section .summary,
+.course-content .course-section .content .section_availability,
+.course-content .section .summary {
+    padding: 16px 20px !important;
+    font-size: 15px !important;
+    color: #57534E !important;
+    line-height: 1.6 !important;
+    background: #f8fafc !important;
+    border-left: 4px solid #E87722 !important;
+    margin: 12px 16px !important;
+    border-radius: 8px !important;
+}
+/* Скрыть пустые activity-header (серые блоки) */
+.activity-header:empty,
+[data-for="page-activity-header"]:empty,
+.course-section .activity-header:not(:has(*)) {
+    display: none !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
 .activity-item {
     border-bottom: 1px solid #f0f0f0 !important;
     transition: background 0.15s !important;
     border-radius: 0 !important;
+    padding: 12px 16px !important;
 }
 .activity-item:last-child { border-bottom: none !important; }
+/* Section page — контент занимает больше места */
+body.path-course-view #region-main,
+body[class*="path-course-section"] #region-main {
+    min-height: 60vh !important;
+}
 .activity-item:hover { background: #f8f9fa !important; }
 .activity-item .activity-name-area a {
     color: var(--color-primary) !important;
