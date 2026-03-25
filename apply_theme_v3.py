@@ -1217,6 +1217,16 @@ body.pagelayout-login .login-form-forgotpassword::after {
     color: #1e3a5f !important;
 }
 
+/* Скрыть shortname курса (LIT-1, MAT-1 и т.д.) — техническое название */
+.card.course-card .text-muted[data-region="shortenedcoursename"],
+.card.course-card .categoryname,
+.card.course-card .course-card-category,
+.coursebox .coursecat,
+.course-card .text-muted:first-child,
+[data-region="shortenedcoursename"] {
+    display: none !important;
+}
+
 /* Скрыть "Легенда событий" popup и ненужные элементы календаря */
 .calendarwrapper .calendar-controls .btn[data-action="filter-events"],
 [data-region="calendar-filter"],
