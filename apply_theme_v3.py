@@ -314,13 +314,41 @@ body {
     box-shadow: none !important;
     border-color: transparent !important;
 }
-/* Глобально убрать синий focus ring на всём сайте */
-*:focus-visible {
-    outline-color: #E87722 !important;
+/* Глобально убрать ВСЕ focus rings */
+*:focus, *:focus-visible, *:focus-within {
+    outline: 2px solid transparent !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
 }
-a:focus, button:focus {
+/* Course index — активная секция: оранжевый фон вместо синей рамки */
+.courseindex .courseindex-section.highlight,
+.courseindex .courseindex-item.current,
+#courseindex [aria-expanded="true"],
+#courseindex .active,
+.courseindex-section-title[aria-current] {
+    background: rgba(232,119,34,0.12) !important;
+    border-left: 3px solid #E87722 !important;
     outline: none !important;
     box-shadow: none !important;
+}
+/* Серая полоса — course-section-header на section page */
+.course-section-header,
+[data-for="page-activity-header"],
+.activity-header {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+/* Контейнер контента — белый фон, не голубой */
+.course-content,
+.course-content .course-section,
+#region-main .course-content {
+    background: white !important;
 }
 .activity-item {
     border-bottom: 1px solid #f0f0f0 !important;
