@@ -1619,6 +1619,17 @@ if (isDashboard) {
 }
 
 // ═══ СТРАНИЦА КУРСА ═══
+// Если на section.php — добавить навигацию "Все уроки"
+if (path.indexOf('/course/section.php') !== -1) {
+    var backLink = document.createElement('a');
+    var courseLink = document.querySelector('#courseindex a[href*="/course/view.php"], .breadcrumb a[href*="/course/view.php"]');
+    backLink.href = courseLink ? courseLink.href : '/my/courses.php';
+    backLink.innerHTML = '← Все уроки предмета';
+    backLink.style.cssText = 'display:inline-block;margin:12px 16px;padding:8px 16px;background:#f0f4f8;border-radius:8px;color:#1e3a5f;text-decoration:none;font-weight:600;font-size:14px';
+    var regionMain = document.getElementById('region-main');
+    if (regionMain) regionMain.insertBefore(backLink, regionMain.firstChild);
+}
+
 if (isCourse) {
     // Стилизуем BBB активности
     var bbbItems = document.querySelectorAll('.modtype_bigbluebuttonbn');
