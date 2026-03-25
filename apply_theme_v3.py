@@ -1136,6 +1136,71 @@ body.path-mod-bigbluebuttonbn .alert-warning {
     border-top: none !important;
 }
 
+/* ═══ BUG-029: Navbar active/focus ring ═══ */
+.navbar a:focus, .navbar a:active,
+.navbar .nav-link:focus, .navbar .nav-link:active,
+#school-nav-links a:focus, #school-nav-links a:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: rgba(255,255,255,0.1) !important;
+}
+
+/* ═══ BUG-025: Drawer z-index — не перекрывать контент ═══ */
+.drawer {
+    z-index: 1029 !important;
+}
+.drawer-left {
+    top: 56px !important;
+    height: calc(100vh - 56px) !important;
+}
+
+/* ═══ BUG-030: Профиль студента ═══ */
+.path-user .userprofile .profile_tree section {
+    background: white !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+
+/* ═══ BUG-031: Настройки — карточки ═══ */
+.path-user .preferences-groups .preferences-group {
+    background: white !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+.path-user .preferences-groups a {
+    color: #1e3a5f !important;
+    font-weight: 500 !important;
+}
+
+/* ═══ BUG-032: Forgot password — добавить ссылку назад ═══ */
+body.pagelayout-login .login-form-forgotpassword::after {
+    content: 'Вернуться на страницу входа' !important;
+    display: block !important;
+    margin-top: 16px !important;
+    color: #E87722 !important;
+    cursor: pointer !important;
+    text-align: center !important;
+}
+
+/* ═══ BUG-033: Кнопки фильтров — оранжевые ═══ */
+.btn-primary {
+    background-color: #E87722 !important;
+    border-color: #E87722 !important;
+}
+.btn-primary:hover {
+    background-color: #c45e10 !important;
+    border-color: #c45e10 !important;
+}
+.btn-outline-secondary {
+    border-color: #1e3a5f !important;
+    color: #1e3a5f !important;
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
@@ -1187,7 +1252,7 @@ if (!document.getElementById('school-nav-links') && !document.body.classList.con
     if (brand && brand.parentElement) {
         var navLinks = document.createElement('div');
         navLinks.id = 'school-nav-links';
-        navLinks.innerHTML = '<a href="/my/">Личный кабинет</a><a href="/my/courses.php">Мои курсы</a><a href="/calendar/view.php">Расписание</a><a href="/grade/report/overview/index.php">Оценки</a>';
+        navLinks.innerHTML = '<a href="/my/courses.php">Мои уроки</a><a href="/calendar/view.php">Расписание</a><a href="/grade/report/overview/index.php">Оценки</a><a href="/message/index.php">Сообщения</a>';
         brand.parentElement.insertBefore(navLinks, brand.nextSibling);
     }
 }
@@ -1308,14 +1373,10 @@ if (isCourse) {
         '.modtype_bigbluebuttonbn, li.activity.bigbluebuttonbn, [data-activityname*="bigbluebuttonbn"]'
     );
     bbbItems.forEach(function(item) {
-        var link = item.querySelector('a.aalink, .activity-name-area a, a.instancename');
-        if (link) {
-            var origText = link.textContent.trim();
-            link.innerHTML = '🎥 ' + origText;
-        }
-        // Badge "Живой урок" (один раз)
+        // Badge "Живой урок" (один раз, без дублей)
+        if (item.querySelector('.school-bbb-badge')) return;
         var nameArea = item.querySelector('.activity-name-area, .activityname');
-        if (nameArea && !nameArea.querySelector('.school-bbb-badge')) {
+        if (nameArea) {
             var badge = document.createElement('span');
             badge.className = 'school-bbb-badge';
             badge.style.cssText = 'background:#E87722;color:white;padding:3px 10px;border-radius:20px;font-size:0.75em;font-weight:700;margin-left:12px;vertical-align:middle;display:inline-block';
