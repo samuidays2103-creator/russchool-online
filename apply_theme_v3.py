@@ -460,11 +460,16 @@ li:has(a[href*="categoryid=2"]) { display: none !important; }
     color: white !important;
     border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
 }
-/* Навигация внутри блока "Мои предметы" */
-.block_myoverview .nav-link.active {
-    background: var(--color-accent) !important;
-    color: #fff !important;
-    border-radius: var(--radius-sm) !important;
+/* Скрыть фильтры/сортировку/поиск — ученику не нужно при 4 предметах */
+.block_myoverview [data-region="filter"],
+.block_myoverview [data-region="courses-view-dropdown"],
+.block_myoverview .dropdown,
+.block_myoverview .block-header,
+.block_myoverview .card-header,
+.block_myoverview input[type="search"],
+.block_myoverview .header-action,
+[data-block="myoverview"] .card-header {
+    display: none !important;
 }
 /* Пустое состояние */
 .block_myoverview .empty-placeholder {
