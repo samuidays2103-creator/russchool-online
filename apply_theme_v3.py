@@ -1369,13 +1369,11 @@ if (isDashboard) {
 // ═══ СТРАНИЦА КУРСА ═══
 if (isCourse) {
     // Стилизуем BBB активности
-    var bbbItems = document.querySelectorAll(
-        '.modtype_bigbluebuttonbn, li.activity.bigbluebuttonbn, [data-activityname*="bigbluebuttonbn"]'
-    );
+    var bbbItems = document.querySelectorAll('.modtype_bigbluebuttonbn');
     bbbItems.forEach(function(item) {
         // Badge "Живой урок" (один раз, без дублей)
         if (item.querySelector('.school-bbb-badge')) return;
-        var nameArea = item.querySelector('.activity-name-area, .activityname');
+        var nameArea = item.querySelector('.activity-name-area');
         if (nameArea) {
             var badge = document.createElement('span');
             badge.className = 'school-bbb-badge';
