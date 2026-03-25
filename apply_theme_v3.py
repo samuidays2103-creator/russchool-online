@@ -1354,6 +1354,59 @@ body:not(.role-admin) .calendarwrapper .btn[data-action="new-event"],
     display: none !important;
 }
 
+/* ═══ BUG-037: Скрыть синие drawer toggle кнопки ═══ */
+.drawer-toggler,
+button.drawer-toggler,
+[data-toggler="drawers"],
+.btn-icon.drawer-toggle,
+button[aria-controls*="drawer"] {
+    display: none !important;
+}
+
+/* ═══ BUG-036: BBB иконка — скрыть "б", показать камеру ═══ */
+.modtype_bigbluebuttonbn .activityiconcontainer img,
+.modtype_bigbluebuttonbn .activityicon {
+    visibility: hidden !important;
+    width: 0 !important;
+}
+.modtype_bigbluebuttonbn .activityiconcontainer::after {
+    content: '🎥' !important;
+    font-size: 24px !important;
+    display: inline-block !important;
+}
+
+/* ═══ BUG-040: Mobile фильтры myoverview — повторно скрыть ═══ */
+@media (max-width: 768px) {
+    .block_myoverview [data-region="filter"],
+    .block_myoverview [data-region="courses-view-dropdown"],
+    .block_myoverview .dropdown,
+    .block_myoverview input[type="search"],
+    .block_myoverview .header-action,
+    .block_myoverview .block-header,
+    .block_myoverview .card-header {
+        display: none !important;
+    }
+}
+
+/* ═══ BUG-044: Frontpage "В начало" — убрать ═══ */
+body.notloggedin .primary-navigation {
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    max-height: 0 !important;
+    position: absolute !important;
+    width: 0 !important;
+    opacity: 0 !important;
+}
+
+/* ═══ BUG-045: Mobile footer ═══ */
+@media (max-width: 768px) {
+    #page-footer .moove-container-fluid,
+    #page-footer .footer-columns {
+        display: none !important;
+    }
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
@@ -1409,7 +1462,7 @@ if (!document.getElementById('school-nav-links') && !document.body.classList.con
         brand.parentElement.insertBefore(navLinks, brand.nextSibling);
     }
 }
-var isCourse = path.indexOf('/course/view.php') !== -1;
+var isCourse = path.indexOf('/course/') !== -1;
 var isTeacher = !!document.querySelector(
   '.editmode-switch-form, [data-action="toggle-editing"], .editing-mode-toggle-on, .editing-mode-toggle, input[name="setmode"]'
 );
