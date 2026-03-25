@@ -280,10 +280,27 @@ body {
     background: rgba(232,119,34,0.1) !important;
     border-left: 3px solid #E87722 !important;
 }
-/* Course index sidebar links — убрать focus ring */
+/* Course index sidebar — убрать ВСЕ рамки/outline */
 #courseindex a:focus,
+#courseindex a:focus-visible,
+#courseindex a:active,
 #courseindex button:focus,
-.courseindex a:focus {
+#courseindex button:focus-visible,
+.courseindex a:focus,
+.courseindex a:focus-visible,
+.courseindex *:focus,
+.courseindex *:focus-visible,
+#courseindex .courseindex-link:focus,
+#courseindex .courseindex-link:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+/* Глобально убрать синий focus ring на всём сайте */
+*:focus-visible {
+    outline-color: #E87722 !important;
+}
+a:focus, button:focus {
     outline: none !important;
     box-shadow: none !important;
 }
