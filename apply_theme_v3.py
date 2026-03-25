@@ -896,9 +896,11 @@ body.pagelayout-mydashboard .block_timeline {
     max-height: 200px !important;
     overflow: hidden !important;
 }
-body.pagelayout-mydashboard .block_calendar_month {
-    max-height: 350px !important;
-    overflow: hidden !important;
+/* Скрыть календарь и Шкалу времени на dashboard — ученику не нужно */
+body.pagelayout-mydashboard .block_calendar_month,
+body.pagelayout-mydashboard .block_calendar_upcoming,
+body.pagelayout-mydashboard .block_timeline {
+    display: none !important;
 }
 /* Если timeline пустой — скрыть через CSS (empty data region) */
 body.pagelayout-mydashboard .block_timeline [data-region="no-events-empty-message"] {
