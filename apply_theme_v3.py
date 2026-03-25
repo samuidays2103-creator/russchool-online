@@ -915,7 +915,7 @@ body.notloggedin .courses,
 body.notloggedin .category-browse,
 body.notloggedin #region-main .box.py-3.generalbox,
 body.notloggedin .frontpage-course-list-enrolled,
-body.notloggedin #region-main > div:not(.hero-section):not(#school-hero) {
+body.notloggedin.pagelayout-frontpage #region-main > div:not(.hero-section):not(#school-hero) {
     display: none !important;
     height: 0 !important;
     margin: 0 !important;
