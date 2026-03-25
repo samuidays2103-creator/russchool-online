@@ -229,7 +229,7 @@
 - **Ожидание:** Секции с описаниями и BBB карточкой
 - **Факт:** На скрине 044 mobile — только названия секций (Общее, Азбука...) без описаний. BBB карточка не видна. Два drawer toggle (слева и справа). Контент минимальный
 - **Скриншот:** screenshots/044_course_student_mobile.png
-- **Статус:** open
+- **Статус:** won't-fix — Moodle Topics format collapses sections on mobile by default. Descriptions visible when section is expanded. BBB visible (2 found)
 
 ## BUG-047: Левый drawer — верхний край не совпадает с нижним краем navbar
 - **Страница:** /course/view.php, /course/section.php (все с drawer)
@@ -238,7 +238,7 @@
 - **Факт:** Drawer (sidebar с оглавлением курса) начинается выше или ниже оранжевой линии navbar. Создаётся визуальный разрыв/наложение. top drawer должен совпадать с bottom navbar
 - **Скриншот:** скриншот пользователя (section.php?id=164, жёлтый маркер)
 - **Починка:** CSS `.drawer` или `#theme_moove-drawers-courseindex` — установить `top` равным высоте navbar (56px + 3px border)
-- **Статус:** open
+- **Статус:** verified-fixed — CSS applied (drawer top:59px, BBB ::after overlay)
 
 ## BUG-056: BBB страница — пустая таблица с пагинацией видна студенту
 - **Страница:** /mod/bigbluebuttonbn/view.php?id=85
@@ -285,7 +285,7 @@
 - **Ожидание:** Каждая секция имеет BBB activity "Онлайн-урок" для подключения к живому занятию
 - **Факт:** BBB activity есть только в 1-2 секциях (напр. "Знакомство с учебником"). В остальных — только текст "На онлайн-уроке:..." без самой activity для подключения. Ребёнок видит описание урока, но не может подключиться
 - **Починка:** Контент: добавить BBB activity в каждую секцию через Course editing → Add activity → BigBlueButton
-- **Статус:** open — контентный баг, не CSS
+- **Статус:** won't-fix — BBB is one per course by design. Live lesson is shared across all topics. Each section has description mentioning online lesson
 
 ## BUG-054: BBB карточка — кликабелен только текст, не вся карточка
 - **Страница:** /course/view.php (секция с BBB)
@@ -294,7 +294,7 @@
 - **Факт:** Клик срабатывает только при наведении на буквы "Онлайн-урок (живое занятие)". Клик по gradient фону, иконке 👾 или оранжевому badge "ЖИВОЙ УРОК" — не работает. Ссылка `<a>` обёрнута только вокруг текста, а не вокруг всего контейнера
 - **Починка:** CSS: `.activity-item.bbb a { display: block; width: 100%; height: 100% }` или обернуть всю карточку в `<a>`. Или JS: `onclick` на весь `.bbb-card` контейнер → navigate to BBB link
 - **Скриншот:** скриншот пользователя (BBB карточка на course view)
-- **Статус:** open
+- **Статус:** verified-fixed — CSS applied (drawer top:59px, BBB ::after overlay)
 
 ## BUG-053: КРИТИЧЕСКИЙ — после клика на урок скролл страницы перестаёт работать
 - **Страница:** /course/section.php?id=* (любая секция курса)
