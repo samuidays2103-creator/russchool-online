@@ -886,15 +886,37 @@ body.pagelayout-mydashboard .block_timeline [data-region="no-events-empty-messag
     display: none !important;
 }
 
-/* ═══ BUG-006 re-opened: Футер Moodle — глобальный селектор ═══ */
-#page-footer,
-.footer-popover,
+/* ═══ Футер: скрыть Moodle, показать наш ═══ */
+#page-footer .moove-container-fluid,
+#page-footer .footer-columns,
 footer .tool_dataprivacy,
 #page-footer .logininfo,
 .footer-content-debugging,
-#page-footer a[href*="moodle"],
+#page-footer a[href*="moodle.org"],
 .footer-content .tool_usertours-resettourcontainer {
     display: none !important;
+}
+/* Наш брендированный футер */
+#page-footer {
+    display: block !important;
+    background: #1e3a5f !important;
+    color: rgba(255,255,255,0.7) !important;
+    padding: 24px 0 !important;
+    text-align: center !important;
+    font-size: 14px !important;
+}
+#page-footer::before {
+    content: 'Онлайн-школа EasyDays · Русский язык и математика · 1–4 класс' !important;
+    display: block !important;
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+}
+#page-footer::after {
+    content: '© 2026 EasyDays Samui · support@easydayssamui.com' !important;
+    display: block !important;
+    color: rgba(255,255,255,0.5) !important;
+    font-size: 12px !important;
 }
 
 /* ═══ BUG-010: BBB waiting page ═══ */
@@ -1307,6 +1329,19 @@ if (isCourse) {
             courseContent.insertBefore(panel, courseContent.firstChild);
         }
     }
+}
+
+// ═══ ФУТЕР — ссылки ═══
+var footer = document.getElementById('page-footer');
+if (footer && !footer.querySelector('.school-footer-links')) {
+    var links = document.createElement('div');
+    links.className = 'school-footer-links';
+    links.style.cssText = 'margin-top:12px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap';
+    links.innerHTML = '<a href="https://samuidays2103-creator.github.io/russchool-online/" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px">О школе</a>' +
+        '<a href="/my/courses.php" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px">Мои уроки</a>' +
+        '<a href="/calendar/view.php" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px">Расписание</a>' +
+        '<a href="mailto:support@easydayssamui.com" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px">Поддержка</a>';
+    footer.appendChild(links);
 }
 
 // ═══ ОБЩИЕ УЛУЧШЕНИЯ ═══
