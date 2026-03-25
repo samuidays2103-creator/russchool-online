@@ -1698,6 +1698,16 @@ if (footer && !footer.querySelector('.school-footer-links')) {
     footer.appendChild(links);
 }
 
+// ═══ ЗАМЕНА "курс" → "предмет" в тексте страницы ═══
+document.querySelectorAll('*').forEach(function(el) {
+    if (el.children.length === 0 && el.textContent) {
+        var t = el.textContent;
+        if (t.includes('элемент курса')) el.textContent = t.replace(/элемент курса/g, 'задание');
+        if (t.includes('Обзор курсов')) el.textContent = t.replace(/Обзор курсов/g, 'Обзор предметов');
+        if (t.includes('No data to display')) el.textContent = t.replace('No data to display', 'Нет записей');
+    }
+});
+
 // ═══ ОБЩИЕ УЛУЧШЕНИЯ ═══
 // Кнопка scroll-to-top
 var scrollBtn = document.createElement('button');
