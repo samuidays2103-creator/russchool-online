@@ -113,7 +113,7 @@ body {
 .primary-navigation a[href="/?redirect=0"] {
     display: none !important;
 }
-/* Скрыть popover "Мои курсы" ссылку (дублирует наш nav) */
+/* Скрыть popover "Мои предметы" ссылку (дублирует наш nav) */
 .popover-region-container .see-all-link[href*="courses"],
 .navbar .popover-region .see-all-link {
     display: none !important;
@@ -460,7 +460,7 @@ li:has(a[href*="categoryid=2"]) { display: none !important; }
     color: white !important;
     border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
 }
-/* Навигация внутри блока "Мои курсы" */
+/* Навигация внутри блока "Мои предметы" */
 .block_myoverview .nav-link.active {
     background: var(--color-accent) !important;
     color: #fff !important;
@@ -1252,7 +1252,7 @@ if (!document.getElementById('school-nav-links') && !document.body.classList.con
     if (brand && brand.parentElement) {
         var navLinks = document.createElement('div');
         navLinks.id = 'school-nav-links';
-        navLinks.innerHTML = '<a href="/my/courses.php">Мои уроки</a><a href="/calendar/view.php">Расписание</a><a href="/grade/report/overview/index.php">Оценки</a><a href="/message/index.php">Сообщения</a>';
+        navLinks.innerHTML = '<a href="/my/courses.php">Мои предметы</a><a href="/calendar/view.php">Расписание</a><a href="/grade/report/overview/index.php">Оценки</a><a href="/message/index.php">Сообщения</a>';
         brand.parentElement.insertBefore(navLinks, brand.nextSibling);
     }
 }
@@ -1346,7 +1346,7 @@ if (isDashboard) {
         if (courseCards.length > 0) {
             var coursesHeader = document.createElement('h3');
             coursesHeader.style.marginTop = '20px';
-            coursesHeader.textContent = 'Мои курсы';
+            coursesHeader.textContent = 'Мои предметы';
             sidebar.appendChild(coursesHeader);
 
             courseCards.forEach(function(card) {
@@ -1411,7 +1411,7 @@ if (footer && !footer.querySelector('.school-footer-links')) {
     links.className = 'school-footer-links';
     links.style.cssText = 'margin-top:12px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap';
     links.innerHTML = '<a href="https://samuidays2103-creator.github.io/russchool-online/" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px">О школе</a>' +
-        '<a href="/my/courses.php" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px">Мои уроки</a>' +
+        '<a href="/my/courses.php" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px">Мои предметы</a>' +
         '<a href="/calendar/view.php" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px">Расписание</a>' +
         '<a href="mailto:support@easydayssamui.com" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px">Поддержка</a>';
     footer.appendChild(links);
