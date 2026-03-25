@@ -247,10 +247,10 @@ body {
     margin: 0 !important;
 }
 /* Описание секции — красивая карточка */
-.course-content .section-summary,
-.course-content .course-section .summary,
-.course-content .course-section .content .section_availability,
-.course-content .section .summary {
+/* Описание секции — только если есть контент */
+.course-content .section-summary:not(:empty),
+.course-content .course-section .summary:not(:empty),
+.course-content .section .summary:not(:empty) {
     padding: 16px 20px !important;
     font-size: 15px !important;
     color: #57534E !important;
@@ -259,6 +259,24 @@ body {
     border-left: 4px solid #E87722 !important;
     margin: 12px 16px !important;
     border-radius: 8px !important;
+}
+/* Пустые summary — полностью скрыть */
+.course-content .section-summary:empty,
+.course-content .summary:empty,
+.course-content .section_availability:empty {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+/* Серая полоса сверху секции — скрыть все пустые wrapper'ы */
+.course-content .course-section > .content > div:empty,
+.course-content .sectionhead,
+[data-for="page-activity-header"] {
+    display: none !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 /* Скрыть пустые блоки в секциях */
 .activity-header,
@@ -311,10 +329,10 @@ a:focus, button:focus {
     padding: 12px 16px !important;
 }
 .activity-item:last-child { border-bottom: none !important; }
-/* Section page — контент занимает больше места */
+/* Section page — убрать лишнее пустое пространство */
 body.path-course-view #region-main,
 body[class*="path-course-section"] #region-main {
-    min-height: 60vh !important;
+    min-height: auto !important;
 }
 .activity-item:hover { background: #f8f9fa !important; }
 .activity-item .activity-name-area a {
