@@ -1008,24 +1008,19 @@ body.path-mod-bigbluebuttonbn .alert-warning {
     margin-bottom: 20px !important;
 }
 
-/* ═══ BUG-004: XP виджет — скрыть английский текст, показать русский ═══ */
-.block_xp .introduction,
-.block_xp .block_xp-dismissable-notice,
-.block_xp .alert.alert-info {
-    font-size: 0 !important;
-    color: transparent !important;
-    line-height: 0 !important;
-    padding: 8px !important;
-    min-height: 0 !important;
+/* ═══ BUG-004: XP виджет — скрыть весь intro блок, показать один русский текст ═══ */
+.block_xp .card-text.content,
+.block_xp .introduction {
+    display: none !important;
 }
-.block_xp .introduction::after,
-.block_xp .block_xp-dismissable-notice::after,
-.block_xp .alert.alert-info::after {
+/* Показать русский текст ОДИН РАЗ через card-body ::after */
+.block_xp .card-body::after {
     content: 'Участвуйте в курсе, чтобы получать очки опыта!' !important;
     font-size: 13px !important;
     color: #57534E !important;
     display: block !important;
     line-height: 1.4 !important;
+    margin-top: 8px !important;
 }
 /* Скрыть "Level up!" заголовок (на EN) */
 .block_xp .card-title:first-child {
