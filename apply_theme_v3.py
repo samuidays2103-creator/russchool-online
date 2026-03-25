@@ -295,8 +295,7 @@ body {
     outline: none !important;
     border: none !important;
     box-shadow: none !important;
-    background: rgba(232,119,34,0.1) !important;
-    border-left: 3px solid #E87722 !important;
+    background: rgba(30,58,95,0.08) !important;
 }
 /* Course index sidebar — убрать ВСЕ рамки/outline */
 #courseindex a:focus,
@@ -326,8 +325,8 @@ body {
 #courseindex [aria-expanded="true"],
 #courseindex .active,
 .courseindex-section-title[aria-current] {
-    background: rgba(232,119,34,0.12) !important;
-    border-left: 3px solid #E87722 !important;
+    background: rgba(30,58,95,0.08) !important;
+    border: none !important;
     outline: none !important;
     box-shadow: none !important;
 }
@@ -397,7 +396,7 @@ body[class*="path-course-section"] #region-main {
 .courseindex .courseindex-item.active,
 .courseindex .courseindex-section.active {
     background: rgba(30,58,95,0.07) !important;
-    border-left: 3px solid var(--color-accent) !important;
+    border: none !important;
 }
 
 /* ═══════════════════════════════════════════
