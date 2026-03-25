@@ -906,7 +906,7 @@ footer .tool_dataprivacy,
     font-size: 14px !important;
 }
 #page-footer::before {
-    content: 'Онлайн-школа EasyDays · Русский язык и математика · 1–4 класс' !important;
+    content: 'Онлайн-школа EasyDays · Начальная школа · 1–4 класс' !important;
     display: block !important;
     color: rgba(255,255,255,0.9) !important;
     font-weight: 600 !important;
