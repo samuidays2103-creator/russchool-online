@@ -177,11 +177,21 @@ body {
     box-shadow: 0 8px 24px rgba(30,58,95,0.15) !important;
     border-color: #E87722 !important;
 }
+/* BUG-024: Единый фон карточек (не зелёный/фиолетовый — единый брендовый) */
 .card.course-card .card-img-top {
     height: 130px !important;
     object-fit: cover !important;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2a5298 60%, #E87722 100%) !important;
     background-size: cover !important;
     background-position: center !important;
+}
+/* BUG-025: Drawer не наложится на navbar */
+.drawer-left, [data-region="left-hand-drawer"] {
+    z-index: 1030 !important;
+    top: 56px !important;
+}
+.drawer.show {
+    z-index: 1030 !important;
 }
 .card.course-card .coursename.aalink,
 .card.course-card .card-title a {
