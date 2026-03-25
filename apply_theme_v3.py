@@ -84,6 +84,15 @@ body {
     display: inline-flex !important;
     align-items: center !important;
     padding: 6px 0 !important;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 0 !important;
+}
+.navbar-brand:focus, .navbar-brand:active, .navbar-brand:hover {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 .navbar-brand::before {
     content: '';
@@ -99,9 +108,14 @@ body {
     width: auto !important;
     display: inline-block !important;
 }
-/* Скрыть "В начало" из primary nav */
+/* Скрыть "В начало" и дубли из primary nav */
 .primary-navigation .nav-link[href="/"],
 .primary-navigation a[href="/?redirect=0"] {
+    display: none !important;
+}
+/* Скрыть popover "Мои курсы" ссылку (дублирует наш nav) */
+.popover-region-container .see-all-link[href*="courses"],
+.navbar .popover-region .see-all-link {
     display: none !important;
 }
 /* Наша кастомная nav-панель (создаётся JS в footer) */
