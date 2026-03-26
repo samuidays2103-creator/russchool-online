@@ -1617,6 +1617,11 @@ body:not(.role-admin):not(.role-editingteacher):not(.role-teacher) .calendar-con
     font-size: 13px !important;
 }
 
+/* Скрыть "Режим редактирования" для студента/родителя */
+.editmode-switch-form {
+    display: none !important;
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
