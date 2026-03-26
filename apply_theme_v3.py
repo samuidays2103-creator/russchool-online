@@ -1567,6 +1567,41 @@ body:not(.role-admin):not(.role-editingteacher):not(.role-teacher) .calendar-con
     margin-bottom: 4px !important;
 }
 
+/* ═══ BUG-048 reopened: убрать ВСЕ border на drawer и соседних элементах ═══ */
+.drawer, .drawer-left, .drawer-right,
+#theme_moove-drawers-courseindex {
+    border: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    outline: none !important;
+}
+/* Убрать border у соседнего контента */
+.drawers .main-inner {
+    border-left: none !important;
+}
+/* Scrollbar drawer — тонкий, не как вторая линия */
+.drawer::-webkit-scrollbar {
+    width: 4px !important;
+}
+.drawer::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+.drawer::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.1) !important;
+    border-radius: 4px !important;
+}
+
+/* ═══ BUG-052 reopened: drawer ширина + отступы ═══ */
+.courseindex .courseindex-section-title {
+    padding: 8px 8px !important;
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+}
+.courseindex .courseindex-item {
+    padding: 4px 8px 4px 16px !important;
+    font-size: 13px !important;
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
@@ -1808,9 +1843,12 @@ document.querySelectorAll('*').forEach(function(el) {
         if (t.includes('События курса')) el.textContent = t.replace('События курса', 'Уроки');
         if (t.includes('No data to display')) el.textContent = t.replace('No data to display', 'Нет записей');
         if (t.includes('No data')) el.textContent = t.replace('No data', 'Нет данных');
+        if (t.includes('Курсы')) el.textContent = t.replace(/Курсы/g, 'Предметы');
         if (t.includes('курса')) el.textContent = t.replace(/курса/g, 'предмета');
         if (t.includes('курсы')) el.textContent = t.replace(/курсы/g, 'предметы');
         if (t.includes('курс ')) el.textContent = t.replace(/курс /g, 'предмет ');
+        if (t.includes('курсах')) el.textContent = t.replace(/курсах/g, 'предметах');
+        if (t.includes('собеседники')) el.textContent = t.replace('Мои собеседники и любой в моих курсах', 'Мои собеседники');
     }
 });
 
