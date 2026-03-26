@@ -172,6 +172,17 @@ body {
     border-radius: 0 0 var(--radius-md) var(--radius-md) !important;
     box-shadow: var(--shadow-md) !important;
 }
+/* Ensure user dropdown opens properly */
+.usermenu .dropdown-menu.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 9999 !important;
+}
+.usermenu .dropdown-toggle {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
 /* Исправление scroll overlap */
 .secondary-navigation {
     position: relative !important;
