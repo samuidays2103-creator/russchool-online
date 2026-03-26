@@ -1501,6 +1501,34 @@ body, html, #page, #page-wrapper, #page-content, #topofscroll, .main-inner {
     }
 }
 
+/* ═══ BUG-059: Скрыть "Новое событие" для студента ═══ */
+body:not(.role-admin):not(.role-editingteacher):not(.role-teacher) .calendarwrapper .btn[data-action="new-event"],
+body:not(.role-admin):not(.role-editingteacher):not(.role-teacher) .calendar-controls .btn-primary {
+    display: none !important;
+}
+
+/* ═══ BUG-061: Контент не наезжает на navbar/footer ═══ */
+.navbar.fixed-top {
+    z-index: 1040 !important;
+}
+#page-footer {
+    z-index: 1035 !important;
+    position: relative !important;
+}
+#topofscroll, .main-inner {
+    margin-top: 0 !important;
+}
+
+/* ═══ BUG-052 reopened: Drawer — отступы между секциями ═══ */
+.courseindex .courseindex-section {
+    margin-bottom: 4px !important;
+    padding: 4px 0 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+}
+.courseindex .courseindex-item-content {
+    padding-left: 12px !important;
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
@@ -1554,7 +1582,7 @@ if (!document.getElementById('school-nav-links') && !document.body.classList.con
     if (brand && brand.parentElement) {
         var navLinks = document.createElement('div');
         navLinks.id = 'school-nav-links';
-        navLinks.innerHTML = '<a href="/my/courses.php">Мои предметы</a><a href="/calendar/view.php">Расписание</a><a href="/grade/report/overview/index.php">Оценки</a><a href="/message/index.php">Сообщения</a>';
+        navLinks.innerHTML = '<a href="/my/courses.php">Мои предметы</a><a href="/calendar/view.php">Расписание</a><a href="/message/index.php">Сообщения</a>';
         brand.parentElement.insertBefore(navLinks, brand.nextSibling);
     }
 }
@@ -1738,8 +1766,13 @@ document.querySelectorAll('*').forEach(function(el) {
         if (t.includes('элемент курса')) el.textContent = t.replace(/элемент курса/g, 'задание');
         if (t.includes('Следующий задание')) el.textContent = t.replace('Следующий задание', 'Следующее задание');
         if (t.includes('Обзор курсов')) el.textContent = t.replace(/Обзор курсов/g, 'Обзор предметов');
+        if (t.includes('Все курсы')) el.textContent = t.replace('Все курсы', 'Все предметы');
+        if (t.includes('События курса')) el.textContent = t.replace('События курса', 'Уроки');
         if (t.includes('No data to display')) el.textContent = t.replace('No data to display', 'Нет записей');
         if (t.includes('No data')) el.textContent = t.replace('No data', 'Нет данных');
+        if (t.includes('курса')) el.textContent = t.replace(/курса/g, 'предмета');
+        if (t.includes('курсы')) el.textContent = t.replace(/курсы/g, 'предметы');
+        if (t.includes('курс ')) el.textContent = t.replace(/курс /g, 'предмет ');
     }
 });
 
