@@ -1876,6 +1876,31 @@ setTimeout(function() {
     });
 }, 2000);
 
+// ═══ FIX USER MENU DROPDOWN ═══
+var userToggle = document.querySelector('.usermenu .dropdown-toggle, #user-menu-toggle');
+if (userToggle) {
+    userToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var menu = this.closest('.dropdown, .usermenu').querySelector('.dropdown-menu');
+        if (menu) {
+            var isOpen = menu.classList.contains('show');
+            menu.classList.toggle('show');
+            this.setAttribute('aria-expanded', !isOpen);
+            if (!isOpen) {
+                // Close on click outside
+                document.addEventListener('click', function closeMenu(ev) {
+                    if (!menu.contains(ev.target) && !userToggle.contains(ev.target)) {
+                        menu.classList.remove('show');
+                        userToggle.setAttribute('aria-expanded', 'false');
+                        document.removeEventListener('click', closeMenu);
+                    }
+                });
+            }
+        }
+    });
+}
+
 // ═══ ОБЩИЕ УЛУЧШЕНИЯ ═══
 // Кнопка scroll-to-top
 var scrollBtn = document.createElement('button');
