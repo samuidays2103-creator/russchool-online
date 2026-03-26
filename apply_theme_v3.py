@@ -1675,14 +1675,15 @@ if (!document.getElementById('school-nav-links') && !document.body.classList.con
     if (brand && brand.parentElement) {
         var navLinks = document.createElement('div');
         navLinks.id = 'school-nav-links';
-        // Определяем роль: если есть блок mentees → родитель
-        var isMentor = !!document.querySelector('.block_mentees');
-        var isTeacherNav = !!document.querySelector('.editmode-switch-form, [data-action="toggle-editing"]');
-        if (isMentor) {
+        // Определяем роль через body class от local_schoolrole plugin
+        var isParent = document.body.classList.contains('school-role-parent');
+        var isTeacherRole = document.body.classList.contains('school-role-teacher') || document.body.classList.contains('school-role-admin');
+        if (isParent) {
             navLinks.innerHTML = '<a href="/my/">Мой ребёнок</a><a href="/grade/report/overview/index.php">Оценки</a><a href="/calendar/view.php">Расписание</a><a href="/message/index.php">Сообщения</a>';
-        } else if (isTeacherNav) {
+        } else if (isTeacherRole) {
             navLinks.innerHTML = '<a href="/my/courses.php">Мои предметы</a><a href="/grade/report/overview/index.php">Оценки</a><a href="/calendar/view.php">Расписание</a><a href="/message/index.php">Сообщения</a>';
         } else {
+            // Student — НЕТ "Оценки"
             navLinks.innerHTML = '<a href="/my/courses.php">Мои предметы</a><a href="/calendar/view.php">Расписание</a><a href="/message/index.php">Сообщения</a>';
         }
         brand.parentElement.insertBefore(navLinks, brand.nextSibling);
