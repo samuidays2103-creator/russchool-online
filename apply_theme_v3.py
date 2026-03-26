@@ -1378,8 +1378,9 @@ body.pagelayout-login .login-form-forgotpassword::after {
     display: none !important;
 }
 /* Скрыть "Новое событие" для студента */
-body:not(.role-admin) .calendarwrapper .btn[data-action="new-event"],
-.calendar-controls .btn-primary[data-action="new-event"] {
+.calendarwrapper .btn[data-action="new-event"],
+.calendar-controls .btn-primary[data-action="new-event"],
+.calendarwrapper .btn-primary {
     display: none !important;
 }
 
@@ -1566,9 +1567,12 @@ body:not(.role-admin):not(.role-editingteacher):not(.role-teacher) .calendar-con
 /* ═══ BUG-063: Расписание — скрыть техническую информацию ═══ */
 .calendar_event_course .description,
 .calendar_event_course .location,
+.calendar_event_course .row > .col:first-child,
 [data-type="event"] .col-11 small,
+[data-type="event"] .text-muted,
 .calendarwrapper .calendar-controls select,
-.calendarwrapper [data-action="filter-events"] {
+.calendarwrapper [data-action="filter-events"],
+.calendarwrapper .calendar_filters {
     display: none !important;
 }
 /* Упростить карточку события */
