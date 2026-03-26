@@ -1483,11 +1483,34 @@ body, html, #page, #page-wrapper, #page-content, #topofscroll, .main-inner {
     display: none !important;
 }
 
-/* ═══ BUG-057: BBB навигация — компактно ═══ */
+/* ═══ BBB страница — скрыть лишнее, оставить только кнопку ═══ */
+/* Скрыть "Записи", пагинацию, навигацию "Следующий элемент" */
+.path-mod-bigbluebuttonbn .yui3-datatable,
+.path-mod-bigbluebuttonbn table,
+.path-mod-bigbluebuttonbn .bbb_recordings_table,
+.path-mod-bigbluebuttonbn .pagination,
+.path-mod-bigbluebuttonbn nav[aria-label],
+.path-mod-bigbluebuttonbn h4,
 .path-mod-bigbluebuttonbn .activity-navigation,
-.path-mod-bigbluebuttonbn [data-region="activity-navigation"] {
-    max-width: 400px !important;
-    margin: 16px auto !important;
+.path-mod-bigbluebuttonbn [data-region="activity-navigation"],
+.path-mod-bigbluebuttonbn .activity-header {
+    display: none !important;
+}
+/* BBB контент — чистая карточка с кнопкой */
+.path-mod-bigbluebuttonbn #region-main {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 50vh !important;
+    text-align: center !important;
+}
+.path-mod-bigbluebuttonbn .maincontent {
+    max-width: 500px !important;
+    background: white !important;
+    border-radius: 20px !important;
+    padding: 40px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
 }
 
 /* ═══ BUG-043: Mobile navbar — "Мои предметы" не "Мои уроки" ═══ */
