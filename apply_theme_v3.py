@@ -1675,7 +1675,13 @@ if (!document.getElementById('school-nav-links') && !document.body.classList.con
     if (brand && brand.parentElement) {
         var navLinks = document.createElement('div');
         navLinks.id = 'school-nav-links';
-        navLinks.innerHTML = '<a href="/my/courses.php">Мои предметы</a><a href="/calendar/view.php">Расписание</a><a href="/message/index.php">Сообщения</a>';
+        // Определяем роль: если есть блок mentees → родитель
+        var isMentor = !!document.querySelector('.block_mentees');
+        if (isMentor) {
+            navLinks.innerHTML = '<a href="/my/">Мой ребёнок</a><a href="/grade/report/overview/index.php">Оценки</a><a href="/calendar/view.php">Расписание</a><a href="/message/index.php">Сообщения</a>';
+        } else {
+            navLinks.innerHTML = '<a href="/my/courses.php">Мои предметы</a><a href="/calendar/view.php">Расписание</a><a href="/message/index.php">Сообщения</a>';
+        }
         brand.parentElement.insertBefore(navLinks, brand.nextSibling);
     }
 }
