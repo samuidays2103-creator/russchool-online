@@ -1529,6 +1529,21 @@ body:not(.role-admin):not(.role-editingteacher):not(.role-teacher) .calendar-con
     padding-left: 12px !important;
 }
 
+/* ═══ BUG-063: Расписание — скрыть техническую информацию ═══ */
+.calendar_event_course .description,
+.calendar_event_course .location,
+[data-type="event"] .col-11 small,
+.calendarwrapper .calendar-controls select,
+.calendarwrapper [data-action="filter-events"] {
+    display: none !important;
+}
+/* Упростить карточку события */
+.calendar_event_course {
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    margin-bottom: 4px !important;
+}
+
 </style>"""
 
 # ─── TOPOFBODY ───────────────────────────────────────────────────────────────
