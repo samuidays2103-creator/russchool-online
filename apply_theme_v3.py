@@ -1485,15 +1485,15 @@ body, html, #page, #page-wrapper, #page-content, #topofscroll, .main-inner {
 
 /* ═══ BBB страница — скрыть лишнее, оставить только кнопку ═══ */
 /* Скрыть "Записи", пагинацию, навигацию "Следующий элемент" */
+/* Скрыть записи и навигацию — НО НЕ navbar */
 .path-mod-bigbluebuttonbn .yui3-datatable,
-.path-mod-bigbluebuttonbn table,
+.path-mod-bigbluebuttonbn #region-main table,
 .path-mod-bigbluebuttonbn .bbb_recordings_table,
-.path-mod-bigbluebuttonbn .pagination,
-.path-mod-bigbluebuttonbn nav[aria-label],
-.path-mod-bigbluebuttonbn h4,
+.path-mod-bigbluebuttonbn #region-main .pagination,
+.path-mod-bigbluebuttonbn #region-main h4,
 .path-mod-bigbluebuttonbn .activity-navigation,
 .path-mod-bigbluebuttonbn [data-region="activity-navigation"],
-.path-mod-bigbluebuttonbn .activity-header {
+.path-mod-bigbluebuttonbn #region-main .activity-header {
     display: none !important;
 }
 /* BBB контент — чистая карточка с кнопкой */
