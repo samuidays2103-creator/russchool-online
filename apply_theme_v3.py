@@ -1891,6 +1891,24 @@ setTimeout(function() {
     });
 }, 2000);
 
+// ═══ FIX NOTIFICATION/MESSAGE POPOVERS ═══
+document.querySelectorAll('.popover-region-toggle, [data-action="toggle-popover-region"]').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+        var region = this.closest('.popover-region');
+        if (region) {
+            var wasOpen = !region.classList.contains('collapsed');
+            // Close all popovers first
+            document.querySelectorAll('.popover-region').forEach(function(r) { r.classList.add('collapsed'); });
+            // Toggle clicked one
+            if (wasOpen) {
+                region.classList.add('collapsed');
+            } else {
+                region.classList.remove('collapsed');
+            }
+        }
+    });
+});
+
 // ═══ FIX USER MENU DROPDOWN ═══
 var userToggle = document.querySelector('.usermenu .dropdown-toggle, #user-menu-toggle');
 if (userToggle) {
