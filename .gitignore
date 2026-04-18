@@ -25,9 +25,10 @@ software-complex.html
 site/
 # ui-research tracked (contains reports)
 
-# Old screenshots (keep only screenshots/)
+# Screenshots — тестовые артефакты, не в репе
+screenshots/
 *.png
-!screenshots/*.png
+!docs/screenshots/*.png
 
 # Temp PNG files
 additionalhtml_page.png
@@ -50,3 +51,28 @@ ui-research/complete_*.py
 ui-research/quick_*.py
 ui-research/setup_*.py
 ui-research/sys_*.py
+
+# Временные скрипты агентов (cleanup 2026-04-18)
+fix_*.py
+fix_*.php
+check_*.php
+apply_*.py
+bbb_*.php
+create_*.php
+moodle_tester.py
+tester_light.py
+purge_*.py
+
+# Python cache (расширение)
+*.pyo
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
